@@ -5,10 +5,100 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" ></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/Style.css">
-    <script src="javascript/farmerSignUpLoginJS.js"></script>
+	<script src="javascript/farmerSignUpLoginJS.js"></script>
+	<script src="javascript/email-validation.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function()
+	{
+     $("#email").keyup(function()
+	 {  $("#submit").hide();
+		if(validateEmail()){
+				// if the email is validated
+				// set input email border green
+				$("#email").css("border","2px solid green");
+				// and set label 
+				$("#emailMsg").html("<p class='text-success'>Validated</p>");
+			}else{
+				// if the email is not validated
+				// set border red
+				$("#email").css("border","2px solid red");
+				$("#emailMsg").html("<p class='text-danger'>Incorrect Email</p>");
+			}
+			buttonState();
+	 });
+       // use keyup event on password
+		$("#pass").keyup(function(){
+			// check
+			if(validatePassword()){
+				// set input password border green
+				$("#pass").css("border","2px solid green");
+				//set passMsg 
+				$("#passMsg").html("<p class='text-success'>Password validated</p>");
+			}else{
+					// set input password border red
+				$("#pass").css("border","2px solid red");
+				//set passMsg 
+				$("#passMsg").html("<p class='text-danger'>Invalid Password </p>");
+			}
+			buttonState();
+		});
+	});
+	function buttonState(){
+		$("#submit").hide();
+		if(validateEmail() && validatePassword()){
+			// if the both email and password are validate
+			// then button should show visible
+			$('.dark').prop('disabled', false);
+			$("#submit").show();
+			
+		}
+		else if(!(validateEmail() && validatePassword()))
+		{
+			$("#submit").hide();
+		}
+		else{
+			// if both email and pasword are not validated
+			// button state should hidden
+			$("#submit").hide();
+		}
+	}
+	function validateEmail(){
+	
+		// get value of input email
+		var email=$("#email").val();
+		// use reular expression
+		 var reg = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$/;
+		 if(reg.test(email)){
+		 	return true;
+		 }else{
+		 	return false;
+		 }
+
+	}
+	function validatePassword(){
+
+		//get input password value
+		///^[A-Za-z]\w{7,14}$/;
+		var pass=$("#pass").val();
+		var reg2=  /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+		 if(reg2.test(pass)){
+		 	return true;
+		 }else{
+		 	return false;
+		 }
+
+		// check it s length
+		/*if(pass.length > 7){
+			return true;
+		}else{
+			return false;
+		}*/
+
+	}
+	</script>
     </head>
-    <body>
-        
+	<body onload='document.form1.text1.focus()'>
+		
 <div class="body">
 		<div class="veen">
 			<div class="login-btn splits">
@@ -20,18 +110,24 @@
 				<button>Register</button>
 			</div>
 			<div class="wrapper">
-				<form id="login" tabindex="500">
+				<form id="login" tabindex="500" name="form1" action="#">
 					<h3>Login</h3>
 					<div class="mail">
-						<input type="mail" name="">
+						<input type="mail" name='email' id="email">
 						<label>Mail or Username</label>
+						<div class="mail">
+						<span id="emailMsg"></span>
+					</div>
 					</div>
 					<div class="passwd">
-						<input type="password" name="">
+						<input type="password" name="pass" id ="pass">
 						<label>Password</label>
+						<div class="passwd">
+							<span id="passMsg"></span>
+						</div>
 					</div>
 					<div class="submit">
-						<button class="dark">Login</button>
+						<button class="dark" type="submit" id="submit" name="submit" value="submit" " disabled="disabled">Login</button>
 					</div>
 				</form>
 				<form id="register" tabindex="502">
@@ -48,7 +144,7 @@
 						<input type="text" name="">
 						<label>User Name</label>
 					</div>
-					<div class="passwd">
+					<div class="passwd">z
 						<input type="password" name="">
 						<label>Password</label>
                     </div>
@@ -62,8 +158,8 @@
 				</form>
 			</div>
 		</div>	
+		
 	</div>
-
 
 </body>
 </html>
