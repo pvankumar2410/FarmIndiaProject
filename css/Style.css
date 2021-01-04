@@ -3,8 +3,22 @@
     padding: 1px;
     background-image: url("../img/backg.jpg");
 }
+.box{
+    width: 80%;
+}
+select{
+    width: 60%;
+    align-self: right;
+}
+#regg,#submit{
+    display: none;
+}
+#roj{
+    display: none;
+}
 .veen{
-    width: 70%;
+    width: 90%;
+    height: 70%;
     margin: 100px auto;
     background: rgba(255,255,255,.5);
     min-height: 400px;
