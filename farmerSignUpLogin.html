@@ -8,7 +8,6 @@
 	<script src="javascript/farmerSignUpLoginJS.js"></script>
 	<script src="javascript/email-validation.js"></script>
 	<script src="javascript/reg.js"></script>
-	\
 
 	<script type="text/javascript">
 	//Firebase Libraries
@@ -359,7 +358,7 @@
 				<br>
 				<br>
 				
-				<form id="register" tabindex="502">
+				<form id="register" tabindex="502" class="form" action="phpfiles/reg.php" method="post" >
 					<h3>Register</h3>
 					<div class="name">
 						<input type="text" name="fullname" id="fullname">
@@ -408,13 +407,13 @@
 							<span id="rojgarMsg"></span>
 						</div>
 					</div>
-				<!--	<div class="adhaar" id="adhaar">
+				<div class="adhaar" id="adhaar">
 						<input type="text" name="adhaar" id="adhaar">
 						<label>Adhaar No</label>
 						<div class="adh">
 							<span id="adhMsg"></span> 
 						</div>
-                    </div>-->
+                    </div>
 					<div class="regg" >
 						<button class="dark" id="regg" name="regg" value="regg" class="regg" >Register</button>
 					</div>
@@ -422,36 +421,6 @@
 			</div>
 		</div>	
 		
-	</div>
-<!---->	<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-	 https://firebase.google.com/docs/web/setup#available-libraries -->
-	 //Firebase Libraries
-	 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-	 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
-	 <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script> 
-<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  var firebaseConfig = {
-    apiKey: "AIzaSyBswtFwqAJ9saaTVb6l7Va6-9WUB5zhTo4",
-    authDomain: "farmindia-web.firebaseapp.com",
-    databaseURL: "https://farmindia-web-default-rtdb.firebaseio.com",
-    projectId: "farmindia-web",
-    storageBucket: "farmindia-web.appspot.com",
-    messagingSenderId: "112598710782",
-    appId: "1:112598710782:web:ef5f2578decc19d5f768af",
-    measurementId: "G-HKNVRZDRYZ"
-  };
- 
-  if (!firebase.apps.length) {
-    firebase.initializeApp(config);
-}this.database = firebase.database();
-	</script> 
-<script src="javascript/reg.js"></script>	
+	</div>	
 </body>
 </html>
