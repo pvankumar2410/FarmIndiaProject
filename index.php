@@ -21,6 +21,28 @@ if($email != false && $password != false){
     header('Location: register/login-user.php');
 }
 ?>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js">
+		
+  	$.getJSON(
+	"http://api.openweathermap.org/data/2.5/weather?q=bangalore&appid=32570a88d5d6da78e12a826d693d1ca7",
+	function(data)
+	{
+    console.log(data);
+    var icon="http://api.openweathermap.org/img/w/"+data.weather[0].icon+".png";
+    $('.ic').attr('src',icon);
+    var temp= data.main.temp;
+    $('.temp').append(temp);
+    var weather= data.weather[0].main;
+    $('.weather').append(weather);
+    var city= data.name;
+    $('.city').append(city);
+
+}
+
+);
+ 
+	</script>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
@@ -684,14 +706,28 @@ if($email != false && $password != false){
                         <div class="blog-img">
                             <img class="img-fluid" src="images" alt="" />
                         </div>
-                        <div class="blog-content">
+                        <style>
+                            div.weath{
+                                text-align:center;
+                            }
+                        </style>
+                        <div class="blog-content" >
                             <div class="title-blog">
-                                <h3>Weather Forecasting</h3>
-                                <p>Know About weather changes </p>
+                            <div class="weath">
+                                <h>REAL TIME WEATHER</h>
+                                <br>
+      <img class="ic" src="" ><br>
+      <h>Weather  :  </h>
+      <p class="weather" ></p>
+      <h>Temperature  :  </h>
+      <p class="temp"></p>
+      <h>City :  </h>
+  	<p class="city"></p>
+  </div>
                             </div>
                             <ul class="option-blog">
                                
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="weather/index.html"><i class="fas fa-eye"></i></a></li>
                                 
                             </ul>
                         </div>
@@ -704,12 +740,51 @@ if($email != false && $password != false){
                         </div>
                         <div class="blog-content">
                             <div class="title-blog">
-                                <h3>Real-Time Crop Prices</h3>
-                                <p>Know about the Crop prices </p>
+                            <script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js">
+		
+  	$.getJSON(
+	"https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&offset=250&format=json",
+	function(data)
+	{
+    console.log(data);
+   //1st entry
+    var comm= data.records[0].commodity;
+    $('.comm').append(comm);
+     var arrival= data.records[0].arrival_date;
+    $('.arrival').append(arrival);
+     var min= data.records[0].min_price;
+    $('.min').append(min);
+     var max= data.records[0].max_price;
+    $('.max').append(max);
+}
+
+);
+ 
+	</script>
+    <style>
+                            div.realtime{
+                                text-align:center;
+                            }
+                        </style>
+                        
+      <div class="realtime">
+      <h>Real Time Price Of Crops  </h><br>
+      <h>commmodity  :  </h>
+  	<p class="comm"></p>
+      <h>arrival :  </h>
+  	<p class="arrival"></p>
+      <h>min_price  :  </h>
+  	<p class="min"></p>
+      <h>max_price  :  </h>
+  	<p class="max"></p>
+
+
+  </div>
+                               
                             </div>
                             <ul class="option-blog">
                                
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="realprice.html"><i class="fas fa-eye"></i></a></li>
                              
                             </ul>
                         </div>

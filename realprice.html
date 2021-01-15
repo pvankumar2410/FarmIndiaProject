@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>testing</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js">
+		
+  	$.getJSON(
+	"https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&offset=100&format=json",
+	function(data)
+	{
+    console.log(data);
+   //1st entry
+    var market= data.records[0].market;
+    $('.market').append(market);
+    var comm= data.records[0].commodity;
+    $('.comm').append(comm);
+    var variety= data.records[0].variety;
+    $('.variety').append(variety);
+     var arrival= data.records[0].arrival_date;
+    $('.arrival').append(arrival);
+     var min= data.records[0].min_price;
+    $('.min').append(min);
+     var max= data.records[0].max_price;
+    $('.max').append(max);
+     var mod= data.records[0].modal_price;
+    $('.mod').append(mod);
+    //1st entry
+    var market2= data.records[1].market;
+    $('.market2').append(market2);
+    var comm= data.records[1].commodity;
+    $('.comm2').append(comm);
+    var variety= data.records[1].variety;
+    $('.variety2').append(variety);
+     var arrival= data.records[1].arrival_date;
+    $('.arrival2').append(arrival);
+     var min= data.records[1].min_price;
+    $('.min2').append(min);
+     var max= data.records[1].max_price;
+    $('.max2').append(max);
+     var mod= data.records[1].modal_price;
+    $('.mod2').append(mod);
+    //3rd entry
+     var market2= data.records[2].market;
+    $('.market3').append(market2);
+    var comm= data.records[2].commodity;
+    $('.comm3').append(comm);
+    var variety= data.records[2].variety;
+    $('.variety3').append(variety);
+     var arrival= data.records[2].arrival_date;
+    $('.arrival3').append(arrival);
+     var min= data.records[2].min_price;
+    $('.min3').append(min);
+     var max= data.records[2].max_price;
+    $('.max3').append(max);
+     var mod= data.records[2].modal_price;
+    $('.mod3').append(mod);
+    //4th entry
+    var market2= data.records[3].market;
+    $('.market4').append(market2);
+    var comm= data.records[3].commodity;
+    $('.comm4').append(comm);
+    var variety= data.records[3].variety;
+    $('.variety4').append(variety);
+     var arrival= data.records[3].arrival_date;
+    $('.arrival4').append(arrival);
+     var min= data.records[3].min_price;
+    $('.min4').append(min);
+     var max= data.records[3].max_price;
+    $('.max4').append(max);
+     var mod= data.records[3].modal_price;
+    $('.mod4').append(mod);
+ //5th entry
+ var market2= data.records[4].market;
+    $('.market5').append(market2);
+    var comm= data.records[4].commodity;
+    $('.comm5').append(comm);
+    var variety= data.records[4].variety;
+    $('.variety5').append(variety);
+     var arrival= data.records[4].arrival_date;
+    $('.arrival5').append(arrival);
+     var min= data.records[4].min_price;
+    $('.min5').append(min);
+     var max= data.records[4].max_price;
+    $('.max5').append(max);
+     var mod= data.records[4].modal_price;
+    $('.mod5').append(mod);
+//6th entry
+var market2= data.records[5].market;
+    $('.market6').append(market2);
+    var comm= data.records[5].commodity;
+    $('.comm6').append(comm);
+    var variety= data.records[5].variety;
+    $('.variety6').append(variety);
+     var arrival= data.records[5].arrival_date;
+    $('.arrival6').append(arrival);
+     var min= data.records[5].min_price;
+    $('.min6').append(min);
+     var max= data.records[5].max_price;
+    $('.max6').append(max);
+     var mod= data.records[5].modal_price;
+    $('.mod6').append(mod);
+    //7th entry
+    var market2= data.records[6].market;
+    $('.market7').append(market2);
+    var comm= data.records[6].commodity;
+    $('.comm7').append(comm);
+    var variety= data.records[6].variety;
+    $('.variety7').append(variety);
+     var arrival= data.records[6].arrival_date;
+    $('.arrival7').append(arrival);
+     var min= data.records[6].min_price;
+    $('.min7').append(min);
+     var max= data.records[6].max_price;
+    $('.max7').append(max);
+     var mod= data.records[6].modal_price;
+    $('.mod7').append(mod);
+    //8th entry
+    var market2= data.records[7].market;
+    $('.market8').append(market2);
+    var comm= data.records[7].commodity;
+    $('.comm8').append(comm);
+    var variety= data.records[7].variety;
+    $('.variety8').append(variety);
+     var arrival= data.records[7].arrival_date;
+    $('.arrival8').append(arrival);
+     var min= data.records[7].min_price;
+    $('.min8').append(min);
+     var max= data.records[7].max_price;
+    $('.max8').append(max);
+     var mod= data.records[7].modal_price;
+    $('.mod8').append(mod);
+    //9th entry
+    var market2= data.records[8].market;
+    $('.market9').append(market2);
+    var comm= data.records[8].commodity;
+    $('.comm9').append(comm);
+    var variety= data.records[8].variety;
+    $('.variety9').append(variety);
+     var arrival= data.records[8].arrival_date;
+    $('.arrival9').append(arrival);
+     var min= data.records[8].min_price;
+    $('.min9').append(min);
+     var max= data.records[8].max_price;
+    $('.max9').append(max);
+     var mod= data.records[8].modal_price;
+    $('.mod9').append(mod);
+    //10th entry
+    var market2= data.records[9].market;
+    $('.market10').append(market2);
+    var comm= data.records[9].commodity;
+    $('.comm10').append(comm);
+    var variety= data.records[9].variety;
+    $('.variety10').append(variety);
+     var arrival= data.records[9].arrival_date;
+    $('.arrival10').append(arrival);
+     var min= data.records[9].min_price;
+    $('.min10').append(min);
+     var max= data.records[9].max_price;
+    $('.max10').append(max);
+     var mod= data.records[9].modal_price;
+    $('.mod10').append(mod);
+}
+
+);
+ 
+	</script>
+
+</head>
+<body bgcolor="lightgrey">
+	
+  <div class="realtime">
+    <h4 align="center" >Real Time Price Of Crops </h4>
+  	<table border="1" align="center">
+  	<tr>
+  		<th>market</th>
+  		<th>commodity</th>
+    <th>variety</th>
+    <th>arrival date</th>
+    <th>min price</th>
+    <th>max price</th>
+    <th>modal</th>
+  	</tr>
+  	<tr>
+  <td>	<p class="market"></p></td>
+  <td>	<p class="comm"></p></td>
+  <td>	<p class="variety"></p></td>
+  	<td><p class="arrival"></p></td>
+  <td>	<p class="min"></p></td>
+  <td>	<p class="max"></p></td>
+  <td>	<p class="mod"></p></td>
+  	</tr>
+  <tr>
+  	<td>	<p class="market2"></p></td>
+  <td>	<p class="comm2"></p></td>
+  <td>	<p class="variety2"></p></td>
+  	<td><p class="arrival2"></p></td>
+  <td>	<p class="min2"></p></td>
+  <td>	<p class="max2"></p></td>
+  <td>	<p class="mod2"></p></td>
+  	</tr>
+  	<tr>
+  		<td>	<p class="market3"></p></td>
+  <td>	<p class="comm3"></p></td>
+  <td>	<p class="variety3"></p></td>
+  	<td><p class="arrival3"></p></td>
+  <td>	<p class="min3"></p></td>
+  <td>	<p class="max3"></p></td>
+  <td>	<p class="mod3"></p></td>
+  	</tr>
+  	<tr>
+  		<td>	<p class="market4"></p></td>
+  <td>	<p class="comm4"></p></td>
+  <td>	<p class="variety4"></p></td>
+  	<td><p class="arrival4"></p></td>
+  <td>	<p class="min4"></p></td>
+  <td>	<p class="max4"></p></td>
+  <td>	<p class="mod4"></p></td>
+  	</tr>
+  	<tr>
+  		<td>	<p class="market5"></p></td>
+  <td>	<p class="comm5"></p></td>
+  <td>	<p class="variety5"></p></td>
+  	<td><p class="arrival5"></p></td>
+  <td>	<p class="min5"></p></td>
+  <td>	<p class="max5"></p></td>
+  <td>	<p class="mod5"></p></td>
+  	</tr>
+  		<tr>
+  		<td>	<p class="market6"></p></td>
+  <td>	<p class="comm6"></p></td>
+  <td>	<p class="variety6"></p></td>
+  	<td><p class="arrival6"></p></td>
+  <td>	<p class="min6"></p></td>
+  <td>	<p class="max6"></p></td>
+  <td>	<p class="mod6"></p></td>
+  	</tr>
+	<tr>
+  		<td>	<p class="market7"></p></td>
+  <td>	<p class="comm7"></p></td>
+  <td>	<p class="variety7"></p></td>
+  	<td><p class="arrival7"></p></td>
+  <td>	<p class="min7"></p></td>
+  <td>	<p class="max7"></p></td>
+  <td>	<p class="mod7"></p></td>
+  	</tr>
+  		<tr>
+  		<td>	<p class="market8"></p></td>
+  <td>	<p class="comm8"></p></td>
+  <td>	<p class="variety8"></p></td>
+  	<td><p class="arrival8"></p></td>
+  <td>	<p class="min8"></p></td>
+  <td>	<p class="max8"></p></td>
+  <td>	<p class="mod8"></p></td>
+  	</tr>	<tr>
+  		<td>	<p class="market8"></p></td>
+  <td>	<p class="comm8"></p></td>
+  <td>	<p class="variety8"></p></td>
+  	<td><p class="arrival8"></p></td>
+  <td>	<p class="min8"></p></td>
+  <td>	<p class="max8"></p></td>
+  <td>	<p class="mod8"></p></td>
+  	</tr>
+  	<tr>
+  		<td>	<p class="market9"></p></td>
+  <td>	<p class="comm9"></p></td>
+  <td>	<p class="variety9"></p></td>
+  	<td><p class="arrival9"></p></td>
+  <td>	<p class="min9"></p></td>
+  <td>	<p class="max9"></p></td>
+  <td>	<p class="mod9"></p></td>
+  	</tr>
+  	<tr>
+  		<td>	<p class="market10"></p></td>
+  <td>	<p class="comm10"></p></td>
+  <td>	<p class="variety10"></p></td>
+  	<td><p class="arrival10"></p></td>
+  <td>	<p class="min10"></p></td>
+  <td>	<p class="max10"></p></td>
+  <td>	<p class="mod10"></p></td>
+  	</tr>
+  	</table>
+  </div>
+
+</body>
+</html>
