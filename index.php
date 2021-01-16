@@ -100,7 +100,7 @@ if($email != false && $password != false){
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
+                            <li><a href="register/myaccount.php"><i class="fa fa-user s_color"></i> My Account</a></li>
                             <li><a href="#"><i class="fas fa-location-arrow"></i> Our Blogs</a></li>
                             <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
@@ -165,7 +165,7 @@ if($email != false && $password != false){
                         <li class="dropdown">
                              <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Services </a>
                             <ul class="dropdown-menu">
-								<li><a href="">Auction</a></li>
+								<li><a href="bidding/">Auction</a></li>
 								<li><a href="">Jobs</a></li>
                                 <li><a href="">Tractor Renting</a></li>
                                 <li><a href="">weather details</a></li>
