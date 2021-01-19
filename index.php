@@ -21,6 +21,7 @@ if($email != false && $password != false){
     header('Location: register/login-user.php');
 }
 ?>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	<script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js">
 		
@@ -80,7 +81,6 @@ if($email != false && $password != false){
 </head>
 
 <body>
-<img class="img rounded-circle" style="width: 200px; height: 200px;" src="<?php echo $fetch_info['profileUpload']  ?>">
 <h1>Welcome <?php echo $fetch_info['name'] ?></h1>
  <!-- Start Main Top -->
     <div class="main-top">
@@ -96,7 +96,7 @@ if($email != false && $password != false){
 						</select>
                     </div>
                     <div class="right-phone-box">
-                        <p>Call US :- <a href="#"> 6364229284</a></p>
+                        <p>Call US :- <a href="#"> 7975024629</a></p>
                     </div>
                     <div class="our-link">
                         <ul>
@@ -110,7 +110,10 @@ if($email != false && $password != false){
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
 					<div class="login-box">
-                        <button onclick="document.location='register/login-user.php'">Sign In</button>
+                    <a href="#" class="selectpicker show-tick form-control" data-toggle="dropdown">Sign In </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="bidding/index.php">Sign In Farmer/a></li>
+                                <li><a href="register/login-user.php">Sign In as bidder/a></li>
 					</div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">

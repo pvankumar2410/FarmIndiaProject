@@ -82,12 +82,14 @@ if($email != false && $password != false){
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <a href="register/signup-user.php">Register</a>
+                    <a href="register/signup-user.php">Register </a>
 					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Register Here</option>
-                            
-							<option>Sign In</option>
+					
+
+							<a href="register/signup-user.php" class="selectpicker show-tick form-control" data-toggle="dropdown">Register </a>
+                            <ul class="dropdown-menu">
+								<li><a href="register/login-user.php">Sign In/a></li>
+								<li><a href="">Jobs</a></li>
 						</select>
 					</div>
                     <div class="text-slid-box">
@@ -921,6 +923,14 @@ if($email != false && $password != false){
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+ var urlmenu = document.getElementById( 'basic' );
+ urlmenu.onchange = function() {
+      window.open(  this.options[ this.selectedIndex ].value );
+ };
+</script>
+
     <!-- ALL PLUGINS -->
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
