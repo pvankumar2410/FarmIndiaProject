@@ -59,7 +59,7 @@
                         <input class="form-control" type="date" name="date" placeholder="D.O.B" required>
                     </div>
                      <div class="form-group">
-                        <input class="form-control" type="text" name="kisanid" placeholder="Kisan ID" required>
+                        <input class="form-control" type="text" name="aadhaar" placeholder="Aadhaar number" required>
                     </div>  
                     <div class="form-group">
                         <input class="form-control" type="email" name="email" placeholder="Email Address" required value="<?php echo $email ?>">
