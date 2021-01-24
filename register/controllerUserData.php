@@ -44,9 +44,9 @@ if(isset($_POST['signup'])){
         $errors['phone'] = "Enter a valid 10 digit Phone number";
     }
 
-   if(strlen($name)< 8)
+   if(strlen($name)< 2)
    {
-    $errors['phone'] = "Input is too short, minimum of 8 characters is required";
+    $errors['phone'] = "Input is too short, minimum of 2 characters is required";
    }
    elseif(strlen($name)>20)
    {
@@ -75,6 +75,9 @@ if(isset($_POST['signup'])){
     
 
     
+    
+ 
+
 
     if(count($errors) === 0){
         $encpass = password_hash($password, PASSWORD_BCRYPT);
