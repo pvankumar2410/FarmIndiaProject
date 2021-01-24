@@ -1,5 +1,11 @@
-<?php require_once "register/controllerUserData.php"; ?>
+<?php require_once "register/controllerUserData.php"; 
+ 
+?>
 <?php
+global $name;
+global $start_bid;
+global $bid_end_datetime;
+global $category;
 $email = $_SESSION['email'];
 $password = $_SESSION['password'];
 if($email != false && $password != false){
@@ -19,6 +25,31 @@ if($email != false && $password != false){
     }
 }else{
     header('Location: register/login-user.php');
+}
+
+include 'bidding/admin/db_connect.php' ;
+
+ if (isset($_POST['name'])) {
+    $name = $_POST['name'];
+}
+if (isset($_POST['start_bid'])) {
+    $start_bid = $_POST['start_bid'];
+}
+if (isset($_POST['bid_end_datetime'])) {
+    $bid_end_datetime = $_POST['bid_end_datetime'];
+}
+if (isset($_POST['category'])) {
+    $category = $_POST['category'];
+}
+
+
+if(isset($_GET['id'])){
+$qry = $conn->query("SELECT * FROM products where id= ".$_GET['id']);
+foreach($qry->fetch_array() as $k => $val){
+	$$k=$val;
+}
+$cat_qry = $conn->query("SELECT * FROM categories where id = $category_id");
+$category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
 }
 ?>
 
@@ -112,8 +143,8 @@ if($email != false && $password != false){
 					<div class="login-box">
                     <a href="#" class="selectpicker show-tick form-control" data-toggle="dropdown">Sign In </a>
                             <ul class="dropdown-menu">
-                                <li><a href="bidding/index.php">Sign In Farmer/a></li>
-                                <li><a href="register/login-user.php">Sign In as bidder/a></li>
+                                <li><a href="bidding/index.php">Sign In as Farmer</li>
+                                <li><a href="register/login-user.php">Sign In as bidder</li>
 					</div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
@@ -361,7 +392,7 @@ if($email != false && $password != false){
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                            <img src="bidding/admin/assets/uploads/<?php echo $img_fname ?>" class="d-flex w-100" alt="">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -372,8 +403,13 @@ if($email != false && $password != false){
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $7.79</h5>
+                            <h4>Name: <large><b><?php echo $name ?></b></large></h4>
+                            <h4>Category: <b><?php echo $category ?></b><h4>
+                            <p>Starting Amount: <b><?php echo number_format($start_bid,2) ?></b></p>
+	<p>Until: <b><?php echo date("m d,Y h:i A",strtotime($bid_end_datetime)) ?></b></p>
+	<p>Highest Bid: <b id="hbid"><?php echo number_format($start_bid,2) ?></b></p>
+    <button class="btn btn-primary btn-block btn-sm" type="button" id="bid">Bid</button>
+    <button class="btn col-sm-5 btn-secondary mt-0 btn-block btn-sm" type="button" id="cancel_bid">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -1011,6 +1047,9 @@ if($email != false && $password != false){
     <script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+
+
+    
 </body>
 
 </html>
