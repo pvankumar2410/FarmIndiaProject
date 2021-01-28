@@ -45,7 +45,7 @@ $fetch_info = mysqli_fetch_assoc($run_Sql);
         <h1><?php echo $fetch_info['name'] ?></h1>
         
         <!-- and role or location -->
-        <h2>Kisan Id:  <?php echo $fetch_info['kisanid'] ?></h2>
+        <h2>Aadhaar Id:  <?php echo $fetch_info['aadhaar'] ?></h2>
         <h2>Account Status:  <?php echo $fetch_info['status'] ?></h2>
         <br>
         <br>

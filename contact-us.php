@@ -106,17 +106,17 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/farmindia.jpg" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/farmindia.jpg" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="about.php">About Us</a></li>
                         <li class="dropdown">
-                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Services </a>
+                            <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Services </a>
                             <ul class="dropdown-menu">
 								<li><a href="">Auction</a></li>
 								<li><a href="">Jobs</a></li>
@@ -126,6 +126,7 @@
                                 <li><a href="">Pesticides</a></li>
                             </ul>
                         </li>
+                 
                         <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -150,23 +151,23 @@
                 <li class="cart-box">
                     <ul class="cart-list">
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
+                            <a href="#" class="photo"><img src="" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#"></a></h6>
+                            <p>1x - <span class="price"></span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
+                            <a href="#" class="photo"><img src="" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#"></a></h6>
+                            <p>1x - <span class="price"></span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
+                            <p>1x - <span class="price"></span></p>
                         </li>
                         <li class="total">
                             <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
+                            <span class="float-right"><strong>Total</strong>: </span>
                         </li>
                     </ul>
                 </li>
@@ -194,10 +195,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>My Account</h2>
+                    <h2>Contact Us</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                        <li class="breadcrumb-item active">My Account</li>
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"> Contact Us </li>
                     </ul>
                 </div>
             </div>
@@ -205,138 +206,53 @@
     </div>
     <!-- End All Title Box -->
 
-    <!-- Start My Account  -->
-    <div class="my-account-box-main">
+    <!-- Start Contact Us  -->
+    <div class="contact-box-main">
         <div class="container">
-            <div class="my-account-page">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fa fa-gift"></i> </a>
+            <div class="row">
+                <div class="col-lg-8 col-sm-12">
+                    <div class="contact-form-right">
+                        <h2>GET IN TOUCH</h2>
+                        <p><form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
-                                <div class="service-desc">
-                                    <h4>Your Orders</h4>
-                                    <p>Track, return, or buy things again</p>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"><i class="fa fa-lock"></i> </a>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="subject" name="name" placeholder="Subject" required data-error="Please enter your Subject">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
                                 </div>
-                                <div class="service-desc">
-                                    <h4>Login &amp; security</h4>
-                                    <p>Edit login, name, and mobile number</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fa fa-location-arrow"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Your Addresses</h4>
-                                    <p>Edit addresses for orders and gifts</p>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="submit-button text-center">
+                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fa fa-credit-card"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Payment options</h4>
-                                    <p>Edit or add payment methods</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fab fa-paypal"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>Post a Crop/Sell Your Crop</h4>
-                                    <p>Post</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="account-box">
-                            <div class="service-box">
-                                <div class="service-icon">
-                                    <a href="#"> <i class="fab fa-bid"></i> </a>
-                                </div>
-                                <div class="service-desc">
-                                    <h4>View The bid details</h4>
-                                    <p>Your Crop Bid</p>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-                <div class="bottom-box">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>Weather Forecasting </h4>
-                                        <ul>
-                                            <li> <a href="#">View Weather Details</a> </li>
-                                       
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>Pesticides </h4>
-                                        <ul>
-                                            <li> <a href="#">What Pesticide to be used to Your Crop</a> </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12">
-                            <div class="account-box">
-                                <div class="service-box">
-                                    <div class="service-desc">
-                                        <h4>Real-Time Price Of Crop</h4>
-                                        <ul>
-                                            <li> <a href="#">View Crop Price</a> </li>
-                 
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                      
-                       
-                    </div>
-                </div>
+				
             </div>
         </div>
     </div>
-    <!-- End My Account -->
+    <!-- End Cart -->
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -496,7 +412,7 @@
                             <h4>Contact Us</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Christ (Deemed to be University) <br>Main Campus,<br> Bangalore KA 560029 </p>
                                 </li>
                                 <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
