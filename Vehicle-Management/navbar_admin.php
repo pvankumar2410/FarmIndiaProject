@@ -10,8 +10,8 @@
             </div>
             <div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="newdriver.php">Add New Job</a></li>
-                    <li><a href="newvehicle.php">Add New Vehicle</a></li>
+                    <li><a href="newdriver.php">Add New Vehicle</a></li>
+                    <li><a href="newvehicle.php">Add New Job </a></li>
                     <li><a href="indexbill.php">Billing</a></li>
                     <li><a href="bookinglist.php">Booking</a></li>
                     

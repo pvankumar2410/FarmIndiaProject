@@ -80,10 +80,10 @@
                       <h4><strong>NID No</strong></h4>
                       <p><?php echo $row['drnid']; ?></p>
                       
-                      <h4><strong>Driver License</strong></h4>
+                      <h4><strong>Description</strong></h4>
                       <p><?php echo $row['drlicense']; ?></p>
                       
-                      <h4><strong>License Valid till</strong></h4>
+                      <h4><strong>last date </strong></h4>
                       <p><?php echo $row['drlicensevalid']; ?></p>
 
                     </div>
