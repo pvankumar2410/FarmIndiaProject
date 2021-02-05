@@ -9,7 +9,8 @@
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Site Metas --> <title>FARMINDIA</title>
+    <!-- Site Metas -->
+    <title>FARMINDIA</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -35,7 +36,7 @@
 </head>
 
 <body>
-     <!-- Start Main Top -->
+    <!-- Start Main Top -->
     <div class="main-top">
         <div class="container-fluid">
             <div class="row">
@@ -106,15 +107,15 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/farmindia.jpg" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/farmindia.jpg" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="about.php">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Services </a>
                             <ul class="dropdown-menu">
@@ -126,8 +127,7 @@
                                 <li><a href="">Pesticides</a></li>
                             </ul>
                         </li>
-                 
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact-us.php">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -151,23 +151,23 @@
                 <li class="cart-box">
                     <ul class="cart-list">
                         <li>
-                            <a href="#" class="photo"><img src="" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#"></a></h6>
-                            <p>1x - <span class="price"></span></p>
+                            <a href="#" class="photo"><img src="images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Delica omtantur </a></h6>
+                            <p>1x - <span class="price">$80.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#"></a></h6>
-                            <p>1x - <span class="price"></span></p>
+                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Omnes ocurreret</a></h6>
+                            <p>1x - <span class="price">$60.00</span></p>
                         </li>
                         <li>
-                            <a href="#" class="photo"><img src="" class="cart-thumb" alt="" /></a>
+                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
                             <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price"></span></p>
+                            <p>1x - <span class="price">$40.00</span></p>
                         </li>
                         <li class="total">
                             <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: </span>
+                            <span class="float-right"><strong>Total</strong>: $180.00</span>
                         </li>
                     </ul>
                 </li>
@@ -195,10 +195,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Contact Us</h2>
+                    <h2>ABOUT US</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active"> Contact Us </li>
+                        <li class="breadcrumb-item active">ABOUT US</li>
                     </ul>
                 </div>
             </div>
@@ -206,53 +206,163 @@
     </div>
     <!-- End All Title Box -->
 
-    <!-- Start Contact Us  -->
-    <div class="contact-box-main">
+    <!-- Start About Page  -->
+    <div class="about-box-main">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-sm-12">
-                    <div class="contact-form-right">
-                        <h2>GET IN TOUCH</h2>
-                        <p><form id="contactForm">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="subject" name="name" placeholder="Subject" required data-error="Please enter your Subject">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="submit-button text-center">
-                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+				<div class="col-lg-6">
+                    <div class="banner-frame"> <img class="img-fluid" src="images/about-img.jpg" alt="" />
                     </div>
                 </div>
-				
+                <div class="col-lg-6">
+                    <h2 class="noo-sh-title-top">What <span>FarmIndia</span> does !?</h2>
+                    <p>Provides employment opportunities to the farmers . <br>
+Provides financial benefits/profit to the farmers .<br>
+Provides the knowledge about the crops /pesticides /weather report <br>
+provides the Farmer a facility to rent necessary equipment/Tractor .<br>
+provides the Farmer a facility to sell their  crops.<br>
+Security and Safety Transactions.
+</p>
+                    <p> FarmIndia is a community-based Web Application that focuses on solving unnoticed and serious problems of the Farmers who don't get the proper price to their crop which result in losses,and also FarmIndia focuses on Providing the employment opportunities to the farmers .
+FarmIndia also helps the Farmers to Rent the tractor for their use and also provides knowledge about the crops/weather forecasting/pesticides.
+</p>
+					<a class="btn hvr-hover" href="#">Read More</a>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We are Trusted</h3>
+                        <p>Security and Safety Transactions.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>We Care For Farmers</h3>
+                        <p>Provides employment opportunities to the farmers .
+Provides financial benefits/profit to the farmers .
+</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="service-block-inner">
+                        <h3>Real Time Data</h3>
+                        <p>Provides the knowledge about the crops /pesticides /weather report based on Real Time Data</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-12">
+                    <h2 class="noo-sh-title">Indian Farmers</h2>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="images/happy_farmer_istock.jpg" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Happy Farmer #1</h3> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="images/farmer2.jpg" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Happy Farmer #2</h3> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="images/farmer3.jpg" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Happy Farmer #3</h3></div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="hover-team">
+                        <div class="our-team"> <img src="images/farmer4.jpg" alt="" />
+                            <div class="team-content">
+                                <h3 class="title">Happy Farmer #4</h3> </div>
+                            <ul class="social">
+                                <li>
+                                    <a href="#" class="fab fa-facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-twitter"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-google-plus"></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fab fa-youtube"></a>
+                                </li>
+                            </ul>
+                            <div class="icon"> <i class="fa fa-plus" aria-hidden="true"></i> </div>
+                        </div>
+                        <div class="team-description">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        </div>
+                        <hr class="my-0"> </div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- End Cart -->
+    <!-- End About Page -->
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -428,6 +538,8 @@
         </div>
     </footer>
     <!-- End Footer  -->
+
+    
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
