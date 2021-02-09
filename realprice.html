@@ -6,7 +6,7 @@
 	<script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js">
 		
   	$.getJSON(
-	"https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=xml&offset=0&limit=10",
+	"https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b&format=json&offset=0&limit=100",
 	function(data)
 	{
     console.log(data);
@@ -167,11 +167,11 @@ var market2= data.records[5].market;
 	</script>
 
 </head>
-<body bgcolor="lightgrey" style="background-repeat: no-repeat;background-size: cover;" background="https://64.media.tumblr.com/41258a9a8a0b2ececec97ef081bdedc6/tumblr_nuvll0qxKi1sjv8kao1_1280.jpg">
-	<h4 align="center" style="color:white;font-size:20px ; font-weight: bold;" >Real Time Price Of Crops </h4>
+<body bgcolor="lightgrey" style="background-size: cover;" background="https://img.freepik.com/free-photo/beautiful-green-cornfield-with-sunset-sky-background_29332-1154.jpg?size=626&ext=jpg">
+	
   <div class="realtime">
-    
-  	<table border="1" align="center" style="color:white;font-size:20px ; font-weight: bold;">
+    <h4 align="center" >Real Time Price Of Crops </h4>
+  	<table border="1" align="center" >
   	<tr>
   		<th>market</th>
   		<th>commodity</th>
