@@ -65,6 +65,10 @@
 										 <p><small>Regular Price: <b><?php echo number_format($row['regular_price'],2) ?></b></small></p>
 										 <p><small>Start Price: <b><?php echo number_format($row['start_bid'],2) ?></b></small></p>
 										 <p><small>End Date/Time: <b><?php echo date("M d,Y h:i A",strtotime($row['bid_end_datetime'])) ?></b></small></p>
+										 <?php
+										 $now    = new DateTime();
+										 
+										 ?>
 										 <p><small>Highest Bid: <b class="highest_bid"><?php echo number_format($bid,2) ?></b></small></p>
 										 <p><small>Total Bids: <b class="total_bid"><?php echo $tbid ?> user/s</b></small></p>
 									</td>
