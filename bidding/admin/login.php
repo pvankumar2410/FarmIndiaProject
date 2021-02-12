@@ -97,8 +97,8 @@ div#login-right::before {
   						
   					<form id="login-form" >
   						<div class="form-group">
-  							<label for="username" class="control-label">Username</label>
-  							<input type="text" id="username" name="username" class="form-control">
+  							<label for="username" class="control-label">Email</label>
+  							<input type="email" id="email" name="email" class="form-control">
   						</div>
   						<div class="form-group">
   							<label for="password" class="control-label">Password</label>

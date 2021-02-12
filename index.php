@@ -13,21 +13,21 @@
 	
     ?>
 
-<?php 
-$cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
-?>
-
+<?php include 'bidding/admin/db_connect.php' ?>
 <?php
-                                $where = "";
-                                if($cid > 0){
-                                    $where  = " and category_id =$cid ";
-                                }
-                                $cat = $conn->query("SELECT * FROM products where unix_timestamp(bid_end_datetime) >= ".strtotime(date("Y-m-d H:i"))." $where order by name asc");
-                                if($cat->num_rows <= 0){
-                                    echo "<center><h4><i>No Available Product.</i></h4></center>";
-                                } 
-                                while($row=$cat->fetch_assoc()):
-                             ?>
+global $description;
+if(!isset($description)){
+    $description = 'Variable name is not set';
+    }
+if(isset($_GET['id'])){
+$qry = $conn->query("SELECT * FROM products where id= ".$_GET['id']);
+foreach($qry->fetch_array() as $k => $val){
+	$$k=$val;
+}
+$cat_qry = $conn->query("SELECT * FROM categories where id = $category_id");
+$category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
+}
+?>
                              
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -133,7 +133,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="register/myaccount.php"><i class="fa fa-user s_color"></i> My Account</a></li>
+                            <li><a href="myaccount.php"><i class="fa fa-user s_color"></i> My Account</a></li>
                             <li><a href="#"><i class="fas fa-location-arrow"></i> Our Blogs</a></li>
                             <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
@@ -357,7 +357,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="bidding/admin/assets/uploads/<?php echo $row['img_fname'] ?>" class="d-flex w-100" alt="">
+                            <img src="bidding/admin/assets/uploads/<?php echo $img_fname ?>" class="d-flex w-100" alt="">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -368,14 +368,14 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Name: <large><b><?php echo $row['name'] ?></b></large></h4>
+                            <h4>Name: <large><b><?php echo $name ?></b></large></h4>
                         
-                            <h4>Description: <b><?php echo $row['description'] ?></b><h4>
+                            <h4>Description: <b><?php echo $description ?></b><h4>
                             <div>
-                            <h5>Bid start Price: ₹<?php echo number_format($row['start_bid']) ?></h54>
+                            <h5>Bid start Price: ₹<?php echo number_format($start_bid,2) ?></h54>
                             </div>
                             <div class="float-right align-top d-flex">
-                                     <b>Bid End Time: <span class="badge badge-pill badge-warning text-white"><i class="fa fa-hourglass-half"></i> <?php echo date("M d,Y h:i A",strtotime($row['bid_end_datetime'])) ?></span></b>
+                                     <b>Bid End Time: <span class="badge badge-pill badge-warning text-white"><i class="fa fa-hourglass-half"></i> <?php echo date("m d,Y h:i A",strtotime($bid_end_datetime)) ?></span></b>
                                      </div>
                         </div>
                     </div>
@@ -573,7 +573,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
         </div>
     </div>
     <!-- End Products  -->
-    <?php endwhile; ?>
+ 
 <!-- employee -->
             
     <!-- Start Products  -->

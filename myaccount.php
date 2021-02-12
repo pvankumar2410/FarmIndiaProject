@@ -1,14 +1,10 @@
-<?php require_once "controllerUserData.php";
-require_once "connection.php";
-?>
 <?php
-$email = $_SESSION['email'];
-$password = $_SESSION['password'];
-
-$sql = "SELECT * FROM usertable WHERE email = '$email'";
-$run_Sql = mysqli_query($con, $sql);
-$fetch_info = mysqli_fetch_assoc($run_Sql);
-?>
+ 					include 'bidding/admin/db_connect.php';
+ 				
+ 					$users = $conn->query("SELECT * FROM users order by name asc");
+ 					$i = 1;
+ 					while($row= $users->fetch_assoc()):
+				 ?>
 <!DOCTYPE html>
 <html >
   <head>
@@ -42,16 +38,16 @@ $fetch_info = mysqli_fetch_assoc($run_Sql);
         </a>
         
         <!-- the username -->
-        <h1><?php echo $fetch_info['name'] ?></h1>
+        <h1><?php echo ucwords($row['name']) ?></h1>
         
         <!-- and role or location -->
-        <h2>Aadhaar Id:  <?php echo $fetch_info['aadhaar'] ?></h2>
-        <h2>Account Status:  <?php echo $fetch_info['status'] ?></h2>
+        <h2>Aadhaar Id:  <?php echo ucwords($row['aadhaar']) ?></h2>
+        
         <br>
         <br>
-        <h2>Email:  <?php echo $fetch_info['email'] ?></h2>
-        <h2>Phone No:  <?php echo $fetch_info['phone'] ?></h2>
-        <h2>D.O.B:  <?php echo $fetch_info['date'] ?></h2>
+        <h2>Email: <?php echo ucwords($row['email']) ?></h2>
+        <h2>Phone No: <?php echo ucwords($row['contact']) ?></h2>
+        <h2>D.O.B: <?php echo ucwords($row['date']) ?></h2>
     
     </header>
 
@@ -59,7 +55,7 @@ $fetch_info = mysqli_fetch_assoc($run_Sql);
 
 
     
-    
+    <?php endwhile; ?>
     
     
     

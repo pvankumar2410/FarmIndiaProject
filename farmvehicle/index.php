@@ -67,7 +67,7 @@
                           </li>
                       <?php endif; ?>
                           
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.php?page=about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../about.php">About</a></li>
                         <?php if(isset($_SESSION['login_id'])): ?>
                        <div class=" dropdown mr-4">
                             <a href="#" class="text-white dropdown-toggle"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>
@@ -147,29 +147,7 @@
     </div>
   </div>
   <div id="preloader"></div>
-        <footer class=" py-5 bg-dark">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="mt-0 text-white">Contact us</h2>
-                        <hr class="divider my-4" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-                        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                        <div class="text-white"><?php echo $_SESSION['system']['contact'] ?></div>
-                    </div>
-                    <div class="col-lg-4 mr-auto text-center">
-                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                        <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                        <a class="d-block" href="mailto:<?php echo $_SESSION['system']['email'] ?>"><?php echo $_SESSION['system']['email'] ?></a>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="container"><div class="small text-center text-muted">Copyright © 2021 - <?php echo $_SESSION['system']['name'] ?> | <a href="https://www.sourcecodester.com/" target="_blank"></a></div></div>
-        </footer>
+       
         
        <?php include('footer.php') ?>
     </body>
