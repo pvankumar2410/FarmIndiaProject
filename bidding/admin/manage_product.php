@@ -150,7 +150,7 @@ img#img_path-field{
 								<?php endwhile; ?>
 							</select>
 						</div>
-						
+
 					</div>
 					<div class="form-group row">
 						<div class="col-md-10">
@@ -158,7 +158,7 @@ img#img_path-field{
 							<textarea name="description" id="description" class="form-control" cols="30" rows="5" required><?php echo isset($description) ? html_entity_decode($description) : '' ?></textarea>
 						</div>
 					</div>
-
+					
 					<div class="form-group row">
 						<div class="col-md-4">
 							<label for="" class="control-label">Regular Price</label>
@@ -172,7 +172,7 @@ img#img_path-field{
 					<div class="form-group row">
 						<div class="col-md-4">
 							<label for="" class="control-label">Bidding End Date/Time</label>
-							<input type="text" class="form-control datetimepicker" name="bid_end_datetime" value="<?php echo isset($bid_end_datetime) && strtotime($bid_end_datetime) > 0 ? date("Y-m-d H:i",strtotime($bid_end_datetime)) : '' ?>">
+							<input type="text" class="form-control datetimepicker" id ="datepicker" name="bid_end_datetime" value="<?php echo isset($bid_end_datetime) && strtotime($bid_end_datetime) > 0 ? date("Y-m-d H:i",strtotime($bid_end_datetime)) : '' ?>">
 						</div>
 					</div>
 					<div class=" row form-group">
@@ -187,7 +187,7 @@ img#img_path-field{
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<button class="btn btn-sm btn-block btn-primary col-sm-2"> Save</button>
+							<button class="btn btn-sm btn-block btn-primary col-sm-2" > Save</button>
 						</div>
 					</div>
 				</form>
@@ -226,9 +226,7 @@ img#img_path-field{
 					setTimeout(function(){
 						location.href = "index.php?page=products"
 					},1500)
-
 				}
-				
 			}
 		})
 	})
@@ -246,11 +244,9 @@ img#img_path-field{
       }
       return false;
     }
-
     // Tells the browser that we *can* drop on this target
     addproductHandler(drop, 'dragover', cancel);
     addproductHandler(drop, 'dragenter', cancel);
-
     addproductHandler(drop, 'drop', function(e) {
       e = e || window.product; // get window.product if e argument missing (in IE)   
       if (e.preventDefault) {
@@ -262,9 +258,7 @@ img#img_path-field{
       for (var i = 0; i < files.length; i++) {
         var file = files[i];
         var reader = new FileReader();
-
         //attach product handlers here...
-
         reader.readAsDataURL(file);
         addproductHandler(reader, 'loadend', function(e, file) {
           var bin = this.result;
@@ -272,7 +266,6 @@ img#img_path-field{
           	imgF = imgF.cloneNode(true);
           imgF.removeAttribute('id')
           imgF.removeAttribute('style')
-
           var img = document.createElement("img");
           var fileinput = document.createElement("input");
           var fileinputName = document.createElement("input");
@@ -292,9 +285,7 @@ img#img_path-field{
         }.bindToproductHandler(file));
       }
       return false;
-
     });
-
     Function.prototype.bindToproductHandler = function bindToproductHandler() {
       var handler = this;
       var boundParameters = Array.prototype.slice.call(arguments);
@@ -308,7 +299,6 @@ img#img_path-field{
 } else {
   document.getElementById('status').innerHTML = 'Your browser does not support the HTML5 FileReader.';
 }
-
 function addproductHandler(obj, evt, handler) {
   if (obj.addproductListener) {
     // W3C method
@@ -322,11 +312,9 @@ function addproductHandler(obj, evt, handler) {
   }
 }
 function displayIMG(input){
-
     	if (input.files) {
 	if($('#dname').length > 0)
 		$('#dname').remove();
-
     			Object.keys(input.files).map(function(k){
     				var reader = new FileReader();
 				        reader.onload = function (e) {
@@ -355,9 +343,7 @@ function displayIMG(input){
 				        }
 		        reader.readAsDataURL(input.files[k]);
     			})
-    			
 rem_func()
-
     }
     }
 function displayImg2(input,_this) {
@@ -366,7 +352,6 @@ function displayImg2(input,_this) {
         reader.onload = function (e) {
         	$('#img_path-field').attr('src', e.target.result);
         }
-
         reader.readAsDataURL(input.files[0]);
     }
 }
