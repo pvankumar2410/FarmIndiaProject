@@ -18,7 +18,7 @@
 				<tr>
 					<th class="text-center">#</th>
 					<th class="text-center">Name</th>
-					<th class="text-center">Username</th>
+					<th class="text-center">Email</th>
 					<th class="text-center">Type</th>
 					<th class="text-center">Action</th>
 				</tr>
@@ -40,7 +40,7 @@
 				 	</td>
 				 	
 				 	<td>
-				 		<?php echo $row['username'] ?>
+				 		<?php echo $row['email'] ?>
 				 	</td>
 				 	<td>
 				 		<?php echo $type[$row['type']] ?>
