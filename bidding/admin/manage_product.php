@@ -122,6 +122,7 @@ img#img_path-field{
 		max-width: 8vw;
 	}
 </style>
+
 <div class="container-fluid">
 	<div class="col-lg-12">
 		<div class="card">
@@ -162,11 +163,11 @@ img#img_path-field{
 					<div class="form-group row">
 						<div class="col-md-4">
 							<label for="" class="control-label">Regular Price</label>
-							<input type="number" class="form-control text-right" name="regular_price" value="<?php echo isset($regular_price) ? $regular_price : 0 ?>">
+							<input type="number" class="form-control text-right" min="1" name="regular_price" value="<?php echo isset($regular_price) ? $regular_price : 0 ?>">
 						</div>
 						<div class="col-md-4">
 							<label for="" class="control-label">Starting Bidding Amount</label>
-							<input type="number" class="form-control text-right" name="start_bid" value="<?php echo isset($start_bid) ? $start_bid : 0 ?>">
+							<input type="number" class="form-control text-right" min="1" name="start_bid" value="<?php echo isset($start_bid) ? $start_bid : 0 ?>">
 						</div>
 					</div>
 					<div class="form-group row">
@@ -174,6 +175,9 @@ img#img_path-field{
 							<label for="" class="control-label">Bidding End Date/Time</label>
 							<input type="text" class="form-control datetimepicker" id ="datepicker" name="bid_end_datetime" value="<?php echo isset($bid_end_datetime) && strtotime($bid_end_datetime) > 0 ? date("Y-m-d H:i",strtotime($bid_end_datetime)) : '' ?>">
 						</div>
+					 <script>
+
+    </script>
 					</div>
 					<div class=" row form-group">
 						<div class="col-md-5">
