@@ -39,6 +39,7 @@ if(isset($_SESSION['login_id'])){
 				//set passMsg 
 				$("#passMsg").html("<p class='text-success'>password validated</p>");
 			}else{
+				
 					// set input password border red
 				$("#pass").css("border","2px solid red");
 				//set passMsg 
@@ -240,7 +241,7 @@ if(isset($_SESSION['login_id'])){
 		</div>
 		<div class="form-group">
 			<label for="" class="control-label">D.O.B</label>
-			<input type="date" name="date" required="" class="form-control" id="date" value="<?php echo isset($date) ? $date : '' ?>">
+			<input type="date" name="date" required="" class="form-control" value="<?php echo isset($date) ? $date : '' ?>">
 			<span id="dateMsg"></span>
 		</div>
 		<div class="form-group">
