@@ -1,57 +1,34 @@
-<?php require_once "register/controllerUserData.php"; 
- 
-?>
 <?php
-global $name;
-global $start_bid;
-global $bid_end_datetime;
-global $category;
-$email = $_SESSION['email'];
-$password = $_SESSION['password'];
-if($email != false && $password != false){
-    $sql = "SELECT * FROM usertable WHERE email = '$email'";
-    $run_Sql = mysqli_query($con, $sql);
-    if($run_Sql){
-        $fetch_info = mysqli_fetch_assoc($run_Sql);
-        $status = $fetch_info['status'];
-        $code = $fetch_info['code'];
-        if($status == "verified"){
-            if($code != 0){
-                header('Location: reset-code.php');
-            }
-        }else{
-            header('Location: user-otp.php');
+    session_start();
+    include('bidding/admin/db_connect.php');
+    ob_start();
+        $query = $conn->query("SELECT * FROM system_settings limit 1")->fetch_array();
+         foreach ($query as $key => $value) {
+          if(!is_numeric($key))
+            $_SESSION['system'][$key] = $value;
         }
-    }
-}else{
-    header('Location: register/login-user.php');
-}
+    ob_end_flush();
+    include('bidding/header.php');
 
-include 'bidding/admin/db_connect.php' ;
+	
+    ?>
 
- if (isset($_POST['name'])) {
-    $name = $_POST['name'];
-}
-if (isset($_POST['start_bid'])) {
-    $start_bid = $_POST['start_bid'];
-}
-if (isset($_POST['bid_end_datetime'])) {
-    $bid_end_datetime = $_POST['bid_end_datetime'];
-}
-if (isset($_POST['category'])) {
-    $category = $_POST['category'];
-}
-
-
-if(isset($_GET['id'])){
-$qry = $conn->query("SELECT * FROM products where id= ".$_GET['id']);
-foreach($qry->fetch_array() as $k => $val){
-	$$k=$val;
-}
-$cat_qry = $conn->query("SELECT * FROM categories where id = $category_id");
-$category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
-}
+<?php 
+$cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
 ?>
+
+<?php
+                                $where = "";
+                                if($cid > 0){
+                                    $where  = " and category_id =$cid ";
+                                }
+                                $cat = $conn->query("SELECT * FROM products where unix_timestamp(bid_end_datetime) >= ".strtotime(date("Y-m-d H:i"))." $where order by name asc");
+                                if($cat->num_rows <= 0){
+                                    echo "<center><h4><i>No Available Product.</i></h4></center>";
+                                } 
+                                while($row=$cat->fetch_assoc()):
+                             ?>
+                             
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 	<script rel="javascript" type="text/javascript" href="js/jquery-1.11.3.min.js">
@@ -73,6 +50,21 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
 }
 
 );
+
+
+<script type="text/javascript">
+      $('#login').click(function(){
+        uni_modal("Login",'bidding/login.php')
+      })
+      $('.datetimepicker').datetimepicker({
+          format:'Y-m-d H:i',
+      })
+      $('#find-car').submit(function(e){
+        e.preventDefault()
+        location.href = 'bidding/index.php?page=search&'+$(this).serialize()
+      })
+    </script>
+    <?php $conn->close() ?>
  
 	</script>
 <!DOCTYPE html>
@@ -109,13 +101,23 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+    .user{
+        color: white;
+        position: absolute;
+  top: 2px;
+  right: 16px;
+  font-size: 18px;
+    }
+    </style>
+
 </head>
 
 <body>
-<h1>Welcome <?php echo $fetch_info['name'] ?></h1>
+
  <!-- Start Main Top -->
     <div class="main-top">
-        <button type="button" class="logout-button"><a href="register/logout-user.php">Logout</a></button>
+      
         <div class="container-fluid">
             <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -140,12 +142,13 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-					<div class="login-box">
-                    <a href="#" class="selectpicker show-tick form-control" data-toggle="dropdown">Sign In </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="bidding/index.php">Sign In as Farmer</li>
-                                <li><a href="register/login-user.php">Sign In as bidder</li>
-					</div>
+                <?php if(isset($_SESSION['login_id'])): ?>
+                <div class="user">
+                        <a href="bidding/admin/ajax.php?action=logout2"><?php echo "<font color='white'> Welcome " .$_SESSION['login_name'] ."</font>";?> <i class="fa fa-power-off"></i></a>
+                      <?php else: ?>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="login_now">Login</a></li>
+                      <?php endif; ?>
+                      </div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
@@ -201,7 +204,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                             <ul class="dropdown-menu">
 								<li><a href="bidding/">Auction</a></li>
 								<li><a href="">Jobs</a></li>
-                                <li><a href="">Tractor Renting</a></li>
+                                <li><a href="farmvehicle/index.php">Agricultural equipments Renting</a></li>
                                 <li><a href="">weather details</a></li>
                                 <li><a href="">Crop price Details</a></li>
                                 <li><a href="">Pesticides</a></li>
@@ -330,6 +333,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                 <div class="col-lg-12">
                     <div class="title-all text-center">
                         <h1>Auction</h1>
+                        
                         <p></p>
                     </div>
                 </div>
@@ -353,7 +357,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="bidding/admin/assets/uploads/<?php echo $img_fname ?>" class="d-flex w-100" alt="">
+                            <img src="bidding/admin/assets/uploads/<?php echo $row['img_fname'] ?>" class="d-flex w-100" alt="">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -364,13 +368,15 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4>Name: <large><b><?php echo $name ?></b></large></h4>
-                            <h4>Category: <b><?php echo $category ?></b><h4>
-                            <p>Starting Amount: <b><?php echo number_format($start_bid,2) ?></b></p>
-	<p>Until: <b><?php echo date("m d,Y h:i A",strtotime($bid_end_datetime)) ?></b></p>
-	<p>Highest Bid: <b id="hbid"><?php echo number_format($start_bid,2) ?></b></p>
-    <button class="btn btn-primary btn-block btn-sm" type="button" id="bid">Bid</button>
-    <button class="btn col-sm-5 btn-secondary mt-0 btn-block btn-sm" type="button" id="cancel_bid">Cancel</button>
+                            <h4>Name: <large><b><?php echo $row['name'] ?></b></large></h4>
+                        
+                            <h4>Description: <b><?php echo $row['description'] ?></b><h4>
+                            <div>
+                            <h5>Bid start Price: ₹<?php echo number_format($row['start_bid']) ?></h54>
+                            </div>
+                            <div class="float-right align-top d-flex">
+                                     <b>Bid End Time: <span class="badge badge-pill badge-warning text-white"><i class="fa fa-hourglass-half"></i> <?php echo date("M d,Y h:i A",strtotime($row['bid_end_datetime'])) ?></span></b>
+                                     </div>
                         </div>
                     </div>
                 </div>
@@ -381,7 +387,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                             <div class="type-lb">
                                 <p class="new">New</p>
                             </div>
-                            <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                            <img src="bidding/admin/assets/uploads/<?php echo $row['img_fname'] ?>" class="d-flex w-100" alt="">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -567,6 +573,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
         </div>
     </div>
     <!-- End Products  -->
+    <?php endwhile; ?>
 <!-- employee -->
             
     <!-- Start Products  -->

@@ -64,6 +64,8 @@ Class Action {
 		if(!empty($password))
 		$data .= ", password = '".md5($password)."' ";
 		$data .= ", type = '$type' ";
+		$data .= ", aadhaar = '$aadhaar' ";
+		$data .= ", date = '$date' ";
 		$chk = $this->db->query("Select * from users where username = '$username' and id !='$id' ")->num_rows;
 		if($chk > 0){
 			return 2;
@@ -91,6 +93,8 @@ Class Action {
 		$data .= ", address = '$address' ";
 		$data .= ", contact = '$contact' ";
 		$data .= ", password = '".md5($password)."' ";
+		$data .= ", aadhaar = '$aadhaar' ";
+		$data .= ", date = '$date' ";
 		$chk   = $this->db->query("SELECT * from customers where email ='$email' ".(!empty($id) ? " and id != '$id' " : ''))->num_rows;
 		if($chk > 0){
 			return 3;

@@ -18,7 +18,7 @@ Class Action {
 	function login(){
 		
 			extract($_POST);		
-			$qry = $this->db->query("SELECT * FROM users where username = '".$username."' and password = '".md5($password)."' ");
+			$qry = $this->db->query("SELECT * FROM users where email = '".$email."' and password = '".md5($password)."' ");
 			if($qry->num_rows > 0){
 				foreach ($qry->fetch_array() as $key => $value) {
 					if($key != 'passwors' && !is_numeric($key))
@@ -39,7 +39,7 @@ Class Action {
 	function login2(){
 		
 			extract($_POST);		
-			$qry = $this->db->query("SELECT * FROM users where username = '".$username."' and password = '".md5($password)."' ");
+			$qry = $this->db->query("SELECT * FROM users where email = '".$email."' and password = '".md5($password)."' ");
 			if($qry->num_rows > 0){
 				foreach ($qry->fetch_array() as $key => $value) {
 					if($key != 'passwors' && !is_numeric($key))
@@ -75,13 +75,13 @@ Class Action {
 	function save_user(){
 		extract($_POST);
 		$data = " name = '$name' ";
-		$data .= ", username = '$username' ";
+		$data .= ", email = '$email' ";
 		if(!empty($password))
 		$data .= ", password = '".md5($password)."' ";
 		$data .= ", type = '$type' ";
 		if($type == 1)
 			$establishment_id = 0;
-		$chk = $this->db->query("Select * from users where username = '$username' and id !='$id' ")->num_rows;
+		$chk = $this->db->query("Select * from users where email = '$email' and id !='$id' ")->num_rows;
 		if($chk > 0){
 			return 2;
 			exit;
@@ -104,12 +104,13 @@ Class Action {
 	function signup(){
 		extract($_POST);
 		$data = " name = '$name' ";
-		$data .= ", username = '$username' ";
 		$data .= ", email = '$email' ";
 		$data .= ", contact = '$contact' ";
 		$data .= ", address = '$address' ";
+		$data .= ", aadhaar = '$aadhaar' ";
+		$data .= ", date = '$date' ";
 		$data .= ", password = '".md5($password)."' ";
-		$chk = $this->db->query("SELECT * FROM users where username = '$username' ")->num_rows;
+		$chk = $this->db->query("SELECT * FROM users where email = '$email' ")->num_rows;
 		if($chk > 0){
 			return 2;
 			exit;
@@ -124,10 +125,10 @@ Class Action {
 	function update_account(){
 		extract($_POST);
 		$data = " name = '".$firstname.' '.$lastname."' ";
-		$data .= ", username = '$email' ";
+		$data .= ", email = '$email' ";
 		if(!empty($password))
 		$data .= ", password = '".md5($password)."' ";
-		$chk = $this->db->query("SELECT * FROM users where username = '$email' and id != '{$_SESSION['login_id']}' ")->num_rows;
+		$chk = $this->db->query("SELECT * FROM users where email = '$email' and id != '{$_SESSION['login_id']}' ")->num_rows;
 		if($chk > 0){
 			return 2;
 			exit;

@@ -12,7 +12,7 @@ if(isset($_SESSION['login_id'])){
 	<form action="" id="signup-frm">
 		<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="form-group">
-			<label for="" class="control-label">Name</label>
+			<label for="" class="control-label">Full Name</label>
 			<input type="text" name="name" required="" class="form-control" value="<?php echo isset($name) ? $name : '' ?>">
 		</div>
 		<div class="form-group">
@@ -26,6 +26,14 @@ if(isset($_SESSION['login_id'])){
 		<div class="form-group">
 			<label for="" class="control-label">Email</label>
 			<input type="email" name="email" required="" class="form-control" value="<?php echo isset($email) ? $email : '' ?>">
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label">Aadhaar ID</label>
+			<input type="text" name="aadhaar" required="" class="form-control" value="<?php echo isset($aadhaar) ? $aadhaar : '' ?>">
+		</div>
+		<div class="form-group">
+			<label for="" class="control-label">D.O.B</label>
+			<input type="date" name="date" required="" class="form-control" value="<?php echo isset($date) ? $date : '' ?>">
 		</div>
 		<div class="form-group">
 			<label for="" class="control-label">Password</label>
