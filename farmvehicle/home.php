@@ -114,6 +114,6 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
         }
     })
      $('.view_prod').click(function(){
-        uni_modal_right('View Book','view_prod.php?id='+$(this).attr('data-id'))
+        uni_modal_right('View Equipments','view_prod.php?id='+$(this).attr('data-id'))
      })
 </script>

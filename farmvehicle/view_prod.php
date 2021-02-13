@@ -49,10 +49,16 @@ while($row=$cat_qry->fetch_array()){
 	<p>Description:</p>
 	<p class=""><small><i><?php echo $description ?></i></small></p>
 	<div class="d-flex jusctify-content-center col-md-12">
+  <script type="text/javascript">
+    <script type="text/javascript">
+ 
+</script>
+  </script>
+  <script type="text/javascript"></script>
         <div class="d-flex col-sm-5">
-            <span class="btn btn-sm btn-secondary btn-minus"><b><i class="fa fa-minus"></i></b></span>
-            <input type="number" name="qty" id="qty" value="1">
-            <span class="btn btn-sm btn-secondary btn-plus"><b><i class="fa fa-plus"></i></b></span>
+          
+            <input type="number" name="qty" id="qty" min="1" max="3" value="1">
+           
         </div>
 		<button class="btn btn-primary btn-block btn-sm col-sm-4" type="button" id="add_to_cart">Add to Cart</button>
 	</div>
