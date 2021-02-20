@@ -115,7 +115,7 @@ span.price {
 		echo'
 			<div class="col-75">
 				<div class="container-checkout">
-				<form id="checkout_form" action="checkout_process.php" method="POST" class="was-validated">
+				<form id="checkout_form" action="../PaytmKit/pgRedirect.php" method="POST" class="was-validated">
 					<div class="row-checkout">
 					
 					<div class="col-50">
@@ -134,7 +134,7 @@ span.price {
 					</div>
 					
 					
-						<h3>Cash on Delivery Only</h3>
+					
 						
 						
 

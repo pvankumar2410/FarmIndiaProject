@@ -13,21 +13,13 @@
 	
     ?>
 
+
+
 <?php include 'bidding/admin/db_connect.php' ?>
-<?php
-global $description;
-if(!isset($description)){
-    $description = 'Variable name is not set';
-    }
-if(isset($_GET['id'])){
-$qry = $conn->query("SELECT * FROM products where id= ".$_GET['id']);
-foreach($qry->fetch_array() as $k => $val){
-	$$k=$val;
-}
-$cat_qry = $conn->query("SELECT * FROM categories where id = $category_id");
-$category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
-}
-?>
+
+
+
+
                              
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -109,6 +101,13 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
   right: 16px;
   font-size: 18px;
     }
+    .loginalign{
+        color: white;
+        position: absolute;
+  top: 2px;
+  right: 16px;
+  font-size: 18px;
+    }
     </style>
 
 </head>
@@ -121,13 +120,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
         <div class="container-fluid">
             <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option></option>
-							<option></option>
-							<option></option>
-						</select>
-                    </div>
+				
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> 7975024629</a></p>
                     </div>
@@ -146,7 +139,9 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                 <div class="user">
                         <a href="bidding/admin/ajax.php?action=logout2"><?php echo "<font color='white'> Welcome " .$_SESSION['login_name'] ."</font>";?> <i class="fa fa-power-off"></i></a>
                       <?php else: ?>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="login_now">Login</a></li>
+                      <div class = "loginalign">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="" id="login_now">Login</a></li>
+                        </div>
                       <?php endif; ?>
                       </div>
                     <div class="text-slid-box">
@@ -162,7 +157,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <i class="fab fa-opencart"></i> Search Farming Jobs
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Rent a Tractor
+                                    <i class="fab fa-opencart"></i> Rent a Agricultural Equipments
                                 </li>
                                 <li>
                                     <i class="fab fa-opencart"></i> Pesticides
@@ -205,9 +200,9 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
 								<li><a href="bidding/">Auction</a></li>
 								<li><a href="">Jobs</a></li>
                                 <li><a href="farmvehicle/index.php">Agricultural equipments Renting</a></li>
-                                <li><a href="weather/index.html">weather details</a></li>
-                                <li><a href="realprice.html">Crop price Details</a></li>
-                                <li><a href="pesticides/pesticides.php">Pesticides</a></li>
+                                <li><a href="">weather details</a></li>
+                                <li><a href="">Crop price Details</a></li>
+                                <li><a href="">Pesticides</a></li>
                             </ul>
                         </li>
                         
@@ -244,7 +239,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Welcome To <br> FarmIndia</strong></h1>
-                            <p class="m-b-40">Jai Kisan<br>Farmering is not a Job , its a part of life</p>
+                            <p class="m-b-40">Jai Kisan<br>Farming is not a Job , its a part of life</p>
                             <p><a class="btn hvr-hover" href="#">About Us</a></p>
                         </div>
                     </div>
@@ -301,7 +296,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="shop-cat-box">
                         <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Sample crop images from Database</a>
+                        <a class="btn hvr-hover" href="#">Sample crop imaegs from Database</a>
                     </div>
                 </div>
             </div>
@@ -364,7 +359,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                           
                             </div>
                         </div>
                         <div class="why-text">
@@ -394,12 +389,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5></h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 9.79</h5>
                         </div>
                     </div>
                 </div>
@@ -417,12 +412,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> </h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 10.79</h5>
                         </div>
                     </div>
                 </div>
@@ -440,12 +435,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> $15.79</h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 15.79</h5>
                         </div>
                     </div>
                 </div>
@@ -453,7 +448,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
         </div>
     </div>
     <!-- End Products  -->
-<!-- tractors -->
+<!-- Eupiments -->
 
     <!-- Start Products  -->
     <div class="products-box">
@@ -461,7 +456,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1>Tractors</h1>
+                        <h1>Agricultural Equipments</h1>
                         <p></p>
                     </div>
                 </div>
@@ -482,7 +477,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
-                                <p class="sale"></p>
+                                <p class="sale">Sale</p>
                             </div>
                             <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
@@ -491,12 +486,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5></h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 7.79</h5>
                         </div>
                     </div>
                 </div>
@@ -505,7 +500,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
-                                <p class="new"></p>
+                                <p class="new">New</p>
                             </div>
                             <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
@@ -514,12 +509,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                               
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> $9.79</h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 9.79</h5>
                         </div>
                     </div>
                 </div>
@@ -537,12 +532,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> $10.79</h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 10.79</h5>
                         </div>
                     </div>
                 </div>
@@ -560,12 +555,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> $15.79</h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 15.79</h5>
                         </div>
                     </div>
                 </div>
@@ -613,12 +608,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> $7.79</h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 7.79</h5>
                         </div>
                     </div>
                 </div>
@@ -636,12 +631,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> $9.79</h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 9.79</h5>
                         </div>
                     </div>
                 </div>
@@ -659,12 +654,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> $10.79</h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 10.79</h5>
                         </div>
                     </div>
                 </div>
@@ -682,12 +677,12 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#"></a>
+                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
                         <div class="why-text">
-                            <h4></h4>
-                            <h5> $15.79</h5>
+                            <h4>Lorem ipsum dolor sit amet</h4>
+                            <h5> 15.79</h5>
                         </div>
                     </div>
                 </div>
@@ -718,75 +713,18 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                                 text-align:center;
                             }
                         </style>
-                        <script type="text/javascript">
-                            
-                           
-                           window.onload = function(){ //to prevent loading script before page
-    
-    let input = document.querySelector('.input-text')
-    let cityName = document.querySelector('.name');
-    let temperatureDegree = document.querySelector('.temp');
-    let temperatureDescription = document.querySelector('.description');
-    let locationIcon = document.querySelector('.weather-icon');
-
-    var button = document.querySelector('.submit');
-    button.addEventListener('click', function(name) {
-        
-        const api = 'https://api.openweathermap.org/data/2.5/weather?q='+ input.value + '&appid=32570a88d5d6da78e12a826d693d1ca7';
-        fetch(api)
-        .then(response => {
-           
-            return response.json();
-        })
-        .then(data => {
-            
-           console.log(data);
-            console.log("check");
-            
-            
-            const temperature = data.main.temp;
-            const desc = data.weather[0].description; 
-            // var code = data.weather[0].id;
-            // console.log(icon);
-            // var prefix = 'wi wi-';
-            // var icon = weatherIcons[code].icon;
-
-            // icon = prefix + icon;
-            var icon = ("<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>");
-            
-            //Set DOM elements from API data
-            cityName.textContent = data.name;
-            temperatureDegree.textContent = temperature
-            temperatureDescription.textContent = desc;
-            locationIcon.innerHTML = icon;
-            
-            
-            
-        })
-    })
-}
-                        </script>
                         <div class="blog-content" >
-                            <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='app.css'>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-    <script src='app.js'></script>
                             <div class="title-blog">
                             <div class="weath">
                                 <h>REAL TIME WEATHER</h>
-
-                                <div class="input">
-        <input type="text" placeholder="Enter the city" class="input-text">
-        <input type="submit" class="submit" value="Search">
-    </div>
-    <div class="container">
-        <div class="card">
-            <div class="weather-icon"></div>
-            <h1 class="name"></h1>
-            <p class="temp"></p>
-            <p class="description"></p>
-        </div>
-    </div>
+                                <br>
+      <img class="ic" src="" ><br>
+      <h>Weather  :  </h>
+      <p class="weather" ></p>
+      <h>Temperature  :  </h>
+      <p class="temp"></p>
+      <h>City :  </h>
+  	<p class="city"></p>
   </div>
                             </div>
                             <ul class="option-blog">
@@ -866,7 +804,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                             </div>
                             <ul class="option-blog">
                                 
-                                <li><a href="pesticides/pesticides.php"><i class="fas fa-eye"></i></a></li>
+                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
                                
                             </ul>
                         </div>
@@ -1015,7 +953,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
                             <h4>About FarmIndia</h4>
                             <p> FarmIndia is a community-based Web Application that focuses on solving unnoticed and serious problems of the Farmers who don't get the proper price to their crop which result in losses,and also FarmIndia focuses on Providing the employment opportunities to the farmers .
 </p> 
-							<p>FarmIndia also helps the Farmers to Rent the tractor for their use and also provides knowledge about the crops/weather forecasting/pesticides.
+							<p>FarmIndia also helps the Farmers to Rent the Agricultural Equipments for their use and also provides knowledge about the crops/weather forecasting/pesticides.
 </p> 							
                         </div>
                     </div>
@@ -1073,6 +1011,18 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
 
+    <script type="text/javascript">
+      $('#login').click(function(){
+        uni_modal("Login",'bidding/login.php')
+      })
+      $('.datetimepicker').datetimepicker({
+          format:'Y-m-d H:i',
+      })
+      $('#find-car').submit(function(e){
+        e.preventDefault()
+        location.href = 'bidding/index.php?page=search&'+$(this).serialize()
+      })
+    </script>
 
     
 </body>

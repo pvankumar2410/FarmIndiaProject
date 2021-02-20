@@ -22,8 +22,8 @@
 							<thead>
 								<tr>
 									<th class="text-center">#</th>
-									<th class="">Name</th>
 									<th class="">Product</th>
+									<th class="">Name</th>
 									<th class="">Amount</th>
 									<th class="">Status</th>
 									<th class=""></th>

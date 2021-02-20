@@ -216,7 +216,7 @@ function getAge()
 	
 </script>
 
-<?php session_start() ?>
+
 <div class="container-fluid">
 	<form action="" id="signup-frm">
 		<div class="form-group">
