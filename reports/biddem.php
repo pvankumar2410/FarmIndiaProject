@@ -31,7 +31,7 @@
         ]);
 
         var options = {
-          title: '\ID vs Heightest bid Amount'
+          title: '\ID vs Heighest bid Amount'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
