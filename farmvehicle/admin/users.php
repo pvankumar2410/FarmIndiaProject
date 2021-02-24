@@ -12,7 +12,7 @@
 	<br>
 	<div class="col-lg-12">
 		<div class="card ">
-			<div class="card-header"><b>User List</b></div>
+			<div class="card-header"><b >User List</b></div>
 			<div class="card-body">
 				<table class="table-striped table-bordered">
 			<thead>
