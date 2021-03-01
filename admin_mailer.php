@@ -13,9 +13,9 @@ $mail = new PHPMailer(true);
 $alert = '';
 
 if(isset($_POST['submit'])){
-  //$name = $_POST['name'];
+  $name = $_POST['name'];
   $email = $_POST['email'];
-  //$message = $_POST['message'];
+  $message = $_POST['message'];
 
   try{
     $mail->isSMTP();
@@ -26,13 +26,13 @@ if(isset($_POST['submit'])){
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = '587';
 
-    $mail->setFrom('farmindia58@gmail.com'); // Gmail address which you used as SMTP server
-    $mail->addAddress('farmindia58@gmail.com'); // Email address where you want to receive emails (you can use any of your gmail address including the gmail address which you used as SMTP server)
+    $mail->setFrom($email); // Gmail address which you used as SMTP server
+    $mail->addAddress($email); // Email address where you want to receive emails (you can use any of your gmail address including the gmail address which you used as SMTP server)
 
     $mail->isHTML(true);
     $mail->Subject = 'Message Received (Contact Page)';
-   // $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $message</h3>";
-   $mail->Body = "Email: $email";
+   $mail->Body = "<h3>Name : $name <br>Email: $email <br>Message : $message</h3>";
+   //$mail->Body = "Email: $email";
 
     $mail->send();
     $alert = '<div class="alert-success">
