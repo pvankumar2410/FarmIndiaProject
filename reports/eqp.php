@@ -53,7 +53,9 @@ include("leftside.php");
 			<?php } ?>
 		</tbody>
     </table>		
-	
+	<?php 
+     include('eqprep.php');
+	?>
 </div>
 
 <?php 
