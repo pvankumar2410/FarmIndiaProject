@@ -1,3 +1,8 @@
+<?php include '../mail.php'; ?>
+<?php
+session_start();
+ include '../bidding/admin/db_connect.php' 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,6 +11,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>FarmIndia</title>
+        
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -15,8 +21,11 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
     </head>
     <body id="page-top">
+    <?php echo $alert; ?>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
@@ -30,6 +39,11 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Services </a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                        <?php if(isset($_SESSION['login_id'])): ?>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="admin/ajax.php?action=logout2"><?php echo "Welcome ".$_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
+                      <?php else: ?>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="login_now">Login</a></li>
+                      <?php endif; ?>
                     </ul>
                 </div>
             </div>
@@ -87,7 +101,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <li>Safe and Secure
             </li>
-            <a class="btn btn-primary js-scroll-trigger" href="">Visit Page</a>
+            <a class="btn btn-primary js-scroll-trigger" href="../bidding/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
@@ -107,7 +121,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             <li>Safe and Secure
             </li>
             
-            <a class="btn btn-primary js-scroll-trigger" href="">Visit Page</a>
+            <a class="btn btn-primary js-scroll-trigger" href="../FarmJobs/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
@@ -126,7 +140,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <li>Safe and Secure
             </li>
-            <a class="btn btn-primary js-scroll-trigger" href="">Visit Page</a>
+            <a class="btn btn-primary js-scroll-trigger" href="../farmvehicle/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
@@ -205,15 +219,21 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                 <div class="row">
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Want to Partner With Us</h2>
-                        <form class="form-inline d-flex">
-                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
-                            <button class="btn btn-primary mx-auto" type="submit">Send</button>
+                        <h2 class="text-white mb-5">Want to be a part of FarmIndia?</h2>
+                        <form class="form-inline d-flex" action="" method="post">
+                    
+                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" type="email" name="email" placeholder="Enter email address..." />
+                            <input type="submit" name="submit" class="" value="Send">
                         </form>
                     </div>
                 </div>
             </div>
         </section>
+        <script type="text/javascript">
+    if(window.history.replaceState){
+      window.history.replaceState(null, null, window.location.href);
+    }
+    </script>
         <!-- Contact-->
         <section class="contact-section bg-black">
             <div class="container">
@@ -234,7 +254,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                                 <i class="fas fa-envelope text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Email</h4>
                                 <hr class="my-4" />
-                                <p>FarmIndia@gmail.com</p>
+                                <p>FarmIndia58@gmail.com</p>
                                 <div class="small text-black-50" ><a href=""></a></div>
                             </div>
                         </div>
@@ -258,7 +278,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container">FarmIndia@gmail.com</div></footer>
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">FarmIndia58@gmail.com</div></footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -266,5 +286,18 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script type="text/javascript">
+      $('#login').click(function(){
+        uni_modal("Login",'login.php')
+      })
+      $('.datetimepicker').datetimepicker({
+          format:'Y-m-d H:i',
+      })
+      $('#find-car').submit(function(e){
+        e.preventDefault()
+        location.href = 'index.php?page=search&'+$(this).serialize()
+      })
+    </script>
+    <?php $conn->close() ?>
     </body>
 </html>

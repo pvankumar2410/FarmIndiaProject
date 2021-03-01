@@ -97,6 +97,7 @@ $qry = $conn->query("SELECT * FROM vacancy ");
 										<button class="btn btn-sm btn-primary view_application" type="button" data-id="<?php echo $row['id'] ?>" >View</button>
 										<button class="btn btn-sm btn-primary edit_application" type="button" data-id="<?php echo $row['id'] ?>" >Edit</button>
 										<button class="btn btn-sm btn-danger delete_application" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+										<a href = "../../admin_mailer.php">Send Mail</a>
 									</td>
 								</tr>
 								<?php endwhile; ?>
@@ -162,6 +163,9 @@ $qry = $conn->query("SELECT * FROM vacancy ");
 
 	$('.delete_application').click(function(){
 		_conf("Are you sure to delete this Applicant?","delete_application",[$(this).attr('data-id')])
+	})
+	$(".send_mail").click(function(){
+		uni_modal("","../admin_mailer.php?id="+$(this).attr('data-id'),"mid-large")
 	})
 	function displayImg(input,_this) {
     if (input.files && input.files[0]) {

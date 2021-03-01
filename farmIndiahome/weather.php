@@ -15,7 +15,7 @@
             <div class="app-title">    
         
         
-                <p>fetching...</p>    
+                  
             </div>    
             <div class="notification"> </div>    
             <div class="weather-container">    
@@ -24,6 +24,7 @@
                 </div>    
                 <div class="temperature-value">    
                     <p>- °<span>C</span></p>    
+                    <p> Click on °<span>C</span> to view on temperature in °<span>F</span>
                 </div>    
                 <div class="temperature-description">    
                     <p> - </p>    
