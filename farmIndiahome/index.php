@@ -146,8 +146,23 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
       </div>
     </div>
     </div>
-    <!--row-->
-      
+    <!--row0-->
+    <div><br><br>
+    <table align="center" border="20%" style="color: black;;background:black" >
+        <tr>
+            <td>
+                   <iframe src="topbidder.php" scrolling="no" width="1000px" height="400px">my bidd</iframe>
+
+            </td>
+            <td>
+                   <iframe src="biddem.php" scrolling="no" width="400px" height="400px"></iframe>
+            </td>
+        </tr>
+    </table>
+     </div>    
+          
+  
+   
         <!-- Projects-->
         <section class="projects-section bg-light" id="projects">
             <div class="container">
@@ -185,8 +200,8 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                     <div class="col-lg-6 order-lg-first">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
-                                <div class="project-text w-100 my-auto text-center text-lg-right">
-                                  
+                                <div class="project-text w-100 my-auto text-center text-lg-right"><label style="color: white;font-size: 30px">Real Time Price Of Crops</label>
+                                  <a class="btn btn-primary js-scroll-trigger" href="https://visualize.data.gov.in/?inst=9ef84268-d588-465a-a308-a864a43d0070&embed=1">Check the Prices !! </a>
                                 </div>
                             </div>
                         </div>

@@ -22,21 +22,7 @@ span.hightlight{
                     <div class="col-lg-8 align-self-end mb-4 page-title">
                     	<h3 class="text-white">Welcome to <?php echo $_SESSION['setting_name']; ?></h3>
                         <hr class="divider my-4" />
-                    <div class="col-md-12 mb-2 text-left">
-                        <div class="card">
-                            <div class="card-body">
-                                  <h4 class="text-center">Find Vacancies</h4>
-                               <div class="form-group">
-                                   <div class="input-group">
-                                       <input type="text" class="form-control" id="filter">
-                                       <div class="input-group-append">
-                                           <span class="input-group-text"><i class="fa fa-search"></i></span>
-                                       </div>
-                                   </div>
-                               </div>
-                            </div>
-                        </div>
-                    </div>                        
+                                          
                     </div>
                     
                 </div>
