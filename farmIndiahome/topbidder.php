@@ -28,8 +28,8 @@ include("topbidderexp.php");
 		<table id="" class="table table-striped table-bordered" border="2%" >
 		<tr>
 			<th class="text-center">bid amount</th>
-			<th class="text-center">Category Name</th>
-			<th class="text-center">product_id</th>
+			<th class="text-center">product_id </th>
+			<th class="text-center">Crop/item name</th>
 
 		</tr>
 		<tbody>
