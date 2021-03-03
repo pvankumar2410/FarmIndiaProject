@@ -16,6 +16,7 @@
 				<?php if($_SESSION['login_type'] == 1): ?>
 				
 				<a href="index.php?page=users" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-users"></i></span> Users</a>
+<<<<<<< HEAD
 				<a href="index.php?page=site_settings" class="nav-item nav-site_settings"><span class='icon-field'><i class="fa fa-cogs"></i></span> Settings</a>
 				<a href="index.php?page=sendmail" class="nav-item nav-site_settings"><span class='icon-field'><i class="bi bi-envelope-fill"></i></span> Send Mail</a>-->
 
@@ -32,6 +33,10 @@
     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
   </div>
+=======
+			<!--	<a href="index.php?page=site_settings" class="nav-item nav-site_settings"><span class='icon-field'><i class="fa fa-cogs"></i></span> Settings</a>-->
+				--><a href="index.php?page=sendmail" class="nav-item nav-site_settings"><span class='icon-field'><i class="bi bi-envelope-fill"></i></span> Send Mail</a>-->
+>>>>>>> 6bf69121e23be485593d70f9f21390f76b305d6f
 				
 			<?php endif; ?>
 		</div>

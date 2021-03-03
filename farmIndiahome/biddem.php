@@ -1,7 +1,7 @@
 <?php
   $con = mysqli_connect("localhost","root","","bidding_db");
   if($con){
-    echo "fetching ....";
+    echo "";
   }
 ?>
 <html>
@@ -31,7 +31,7 @@
         ]);
 
         var options = {
-          title: '\ID vs Heighest bid Amount'
+          title: 'Visualization'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -41,6 +41,6 @@
     </script>
   </head>
   <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    <div id="piechart" style="width: 500px; height: 500px; align-self: center;"></div>
   </body>
 </html>

@@ -24,9 +24,7 @@
 			success:function(resp){
 				if(resp == 1){
 					alert_toast('Order successfully submitted.',"success");
-					setTimeout(function(){
-						location.reload()
-					},750)
+					
 				}
 			}
 		})

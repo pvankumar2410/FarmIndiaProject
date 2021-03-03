@@ -18,7 +18,7 @@
 						</div>
 						
 					</div>
-					<!--
+					
 					<div class="card-body">
 						<table class="table table-bordered table-hover">
 							<colgroup>
@@ -73,7 +73,7 @@
 								<?php endwhile; ?>
 							</tbody>
 						</table>
-					</div>-->
+					</div>
 				</div>
 			</div>
 			<!-- Table Panel -->

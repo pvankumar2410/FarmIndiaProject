@@ -1,7 +1,7 @@
 <?php
-  $con = mysqli_connect("localhost","root","","bidding_db");
+  $con = mysqli_connect("localhost","root","","farmveh");
   if($con){
-    echo "fetching ....";
+    echo "fetching data .....";
   }
 ?>
 <html>
@@ -19,19 +19,19 @@
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['product_id', 'bid_amount'],
+          ['book_id', 'price'],
          <?php
-          $sql = 'SELECT product_id, max(bid_amount) as ma  FROM `bids` group by product_id';
+          $sql = 'SELECT book_id, sum(price)*sum(qty) ,sum(qty)as ma  FROM `cart` group by book_id';
          $fire = mysqli_query($con,$sql);
           while ($result = mysqli_fetch_assoc($fire)) {
-            echo"['".$result['product_id']."',".$result['ma']."],";
+            echo"['".$result['book_id']."',".$result['ma']."],";
           }
 
          ?>
         ]);
 
         var options = {
-          title: '\ID vs Heighest bid Amount'
+          title: 'interested product '
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
