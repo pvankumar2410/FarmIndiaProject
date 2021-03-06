@@ -15,7 +15,7 @@ include("topbidderexp.php");
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 <div class="container" align="center"  >	
-	<div class="card-header"><b style="font-size:29px">Most demanding crops </b></div>
+	<div class="card-header"><b style="font-size:29px">Statistics of Top Selling Products </b></div>
 	<div class="well-sm col-sm-12">
 		<div class="btn-group pull-right">	
 			<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					
@@ -25,11 +25,11 @@ include("topbidderexp.php");
 
 	</div>				  
 
-		<table id="" class="table table-striped table-bordered" border="2%" >
+		<table id="" class="table table-striped table-bordered" border="2%/" >
 		<tr>
-			<th class="text-center">bid amount</th>
-			<th class="text-center">product_id </th>
-			<th class="text-center">Crop/item name</th>
+			<th class="text-center">Bid Amount</th>
+			<th class="text-center">Product Id </th>
+			<th class="text-center">Commoditites/Item Name</th>
 
 		</tr>
 		<tbody>

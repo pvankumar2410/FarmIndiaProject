@@ -11,7 +11,7 @@
             
         <div class="container" align="left" style="height:50%;font-weight: 20px ">    
         
-               <h1 style="background-color: black;color: white;">Weather !!</h1><br>    
+               <h1 style="background-color: black;color: white;">Weather</h1><br>    
             <div class="app-title">    
         
         

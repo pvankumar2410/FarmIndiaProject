@@ -20,6 +20,12 @@
 
         var data = google.visualization.arrayToDataTable([
           ['product_id', 'bid_amount'],
+          ['Apples',1],
+          ['Spinach',2],
+          ['Cabbage',3  ],
+          ['G8ra',4],
+
+         
          <?php
           $sql = 'SELECT product_id, max(bid_amount) as ma  FROM `bids` group by product_id';
          $fire = mysqli_query($con,$sql);

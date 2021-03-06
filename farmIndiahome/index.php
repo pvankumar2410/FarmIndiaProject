@@ -21,6 +21,7 @@ session_start();
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+         
 
 
     </head>
@@ -37,12 +38,12 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Services </a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#serv">Services </a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
                         <?php if(isset($_SESSION['login_id'])): ?>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="admin/ajax.php?action=logout2"><?php echo "Welcome ".$_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../bidding/admin/ajax.php?action=logout2"><?php echo "Welcome ".$_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
                       <?php else: ?>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="login_now">Login</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="Login">Login</a></li>
                       <?php endif; ?>
                     </ul>
                 </div>
@@ -82,17 +83,17 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
   <!-- services icon-->
   <div>
    <!--    <div  ><h1 style="background: white;border-color: black;font-size: 30px;align-self: center;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<b >Our Services</b>  </h1></div>-->
-        <div class="services-wrapper projects-section ">
+        <div class="services-wrapper projects-section " id="serv">
   <div class="container svcs-container">
 
     <div class="row">
 
       <div class="col-sm-4 services-box hoverServices">
-        <div class="info text-center">
+      
           <h3 class="services-subheading">
            FarmIndia Action System 
           </h3>
-        </div>
+        
         <div class="info col-lg-10 col-lg-offset-1">
           <ul>
             <li>We Provide a Facility to Bid 
@@ -101,17 +102,18 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <li>Safe and Secure
             </li>
+            <br>
             <a class="btn btn-primary js-scroll-trigger" href="../bidding/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
       <div class="col-sm-4 services-box hoverServices">
         
-        <div class="info text-center">
-          <h3 class="services-subheading">
-            FarmIndia Jobs 
+       
+          <h3>
+        FarmIndia Jobs 
           </h3>
-        </div>
+        
         <div class="info col-lg-10 col-lg-offset-1">
           <ul>
             <li>Jobs to farmers
@@ -120,6 +122,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <li>Safe and Secure
             </li>
+            <br>
             
             <a class="btn btn-primary js-scroll-trigger" href="../FarmJobs/index.php">Visit Page</a>
           </ul>
@@ -127,11 +130,11 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
       </div>
       <div class="col-sm-4 services-box hoverServices last">
        
-        <div class="info text-center">
+      
           <h3 class="services-subheading">
             FarmIndia Shop
           </h3>
-        </div>
+     
         <div class="info col-lg-10 col-lg-offset-1">
           <ul>
             <li>Best Prices
@@ -140,15 +143,19 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <li>Safe and Secure
             </li>
+            <br>
+            
             <a class="btn btn-primary js-scroll-trigger" href="../farmvehicle/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
     </div>
     </div>
+    <br>
+    <br><br><br><br><br><br>
     <!--row0-->
     <div><br><br>
-    <table align="center" border="20%" style="color: black;;background:black" >
+    <table>
         <tr>
             <td>
                    <iframe src="topbidder.php" scrolling="no" width="1000px" height="400px">my bidd</iframe>
@@ -207,7 +214,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                         </div>
                     </div>
                      <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-                    <div class="col-lg-6"><img class="img-fluid" src="https://media.nationalgeographic.org/assets/photos/000/263/26383.jpg"  alt="" /></div>
+                    <div class="col-lg-6"><img class="img-fluid" src="weather_img/wea.jpg"  alt="" /></div>
                     <div class="col-lg-6">
                         <div class="bg-black text-center h-100 project">
                             <div class="d-flex h-100">
@@ -217,7 +224,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                         <?php 
                          include('weather.php');
                         ?>
-         <a class="btn btn-primary js-scroll-trigger" href="">Check Other Place  !?</a>
+
                                   </div>
                             </div>
                         </div>
@@ -303,7 +310,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
         <script src="js/scripts.js"></script>
         <script type="text/javascript">
       $('#login').click(function(){
-        uni_modal("Login",'login.php')
+        uni_modal("Login",'../bidding/login.php')
       })
       $('.datetimepicker').datetimepicker({
           format:'Y-m-d H:i',
@@ -313,6 +320,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
         location.href = 'index.php?page=search&'+$(this).serialize()
       })
     </script>
+      
     <?php $conn->close() ?>
     </body>
 </html>
