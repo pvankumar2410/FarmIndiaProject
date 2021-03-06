@@ -28,6 +28,7 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                     <div class="card-header">Categories</div>
                     <div class="card-body">
                         <ul class='list-group' id='cat-list'>
+                        
                             <li class='list-group-item' data-id='all' data-href="index.php?page=home&category_id=all">All</li>
                             <?php
                                 $cat = $conn->query("SELECT * FROM categories order by name asc");

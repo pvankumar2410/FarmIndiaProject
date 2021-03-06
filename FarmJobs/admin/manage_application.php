@@ -82,7 +82,7 @@
 		<div class="row form-group">
 			<div class="input-group col-md-10 mb-3">
 				<div class="input-group-prepend">
-			    <span class="input-group-text" id="">Resume</span>
+			    <span class="input-group-text" id="">Kissan card/Adhaar card</span>
 			  </div>
 			  <div class="custom-file">
 			    <input type="file" class="custom-file-input" id="resume" onchange="displayfname(this,$(this))" name="resume" accept="application/msword,text/plain, application/pdf">
