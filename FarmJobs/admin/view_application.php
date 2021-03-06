@@ -19,7 +19,7 @@ foreach($application as $k => $v){
 			<hr>
 		<?php echo !empty($cover_letter) ? str_replace("\n","<br>",html_entity_decode($cover_letter)) : 'None'; ?>
 		<hr>
-		<p><b>Resume</p>
+		<p><b>Adhaar Card or Kissan Card</p>
 			<a href="download.php?id=<?php echo $_GET['id'] ?>" target="_blank"><?php echo $fname ?></a>
 
 	</div>

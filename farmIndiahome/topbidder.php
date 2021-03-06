@@ -15,7 +15,7 @@ include("topbidderexp.php");
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 <div class="container" align="center"  >	
-	<div class="card-header"><b style="font-size:29px">Most demanding crops </b></div>
+	<div class="card-header"><b style="font-size:29px">Most demanding Commodity </b></div>
 	<div class="well-sm col-sm-12">
 		<div class="btn-group pull-right">	
 			<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">					

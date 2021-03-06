@@ -91,7 +91,7 @@ body {
 }
 
 .top button {
-    background-color: #db6400;
+    background-color: #007bff;
     color: white;
     font-size: 14px;
     font-weight: bold;
@@ -102,7 +102,7 @@ body {
 }
 
 .top button:hover {
-    background-color: #b05102;
+    background-color: #007bff;
 }
 
 .top .error {
