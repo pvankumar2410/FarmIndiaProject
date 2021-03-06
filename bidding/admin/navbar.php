@@ -8,13 +8,26 @@
 <nav id="sidebar" class='mx-lt-5 bg-dark' >
 		
 		<div class="sidebar-list">
-				<a href="index.php?page=home" class="nav-item nav-home"><span class='icon-field'><i class="fa fa-home"></i></span> Home</a>
+				<!--<a href="index.php?page=home" class="nav-item nav-home"><span class='icon-field'><i class="fa fa-home"></i></span> Home</a>
 				<a href="index.php?page=categories" class="nav-item nav-categories"><span class='icon-field'><i class="fa fa-list"></i></span> Categories</a>
 				<a href="index.php?page=products" class="nav-item nav-products"><span class='icon-field'><i class="fa fa-th-list"></i></span> Products</a>
 				<a href="index.php?page=bids" class="nav-item nav-bids"><span class='icon-field'><i class="fa fa-money-bill-alt"></i></span> Bids</a>
 				<?php if($_SESSION['login_type'] == 1): ?>
 				<a href="index.php?page=users" class="nav-item nav-users"><span class='icon-field'><i class="fa fa-users"></i></span> Users</a>
-				<a href="index.php?page=site_settings" class="nav-item nav-site_settings"><span class='icon-field'><i class="fa fa-cogs"></i></span> System Settings</a>
+				<a href="index.php?page=site_settings" class="nav-item nav-site_settings"><span class='icon-field'><i class="fa fa-cogs"></i></span> System Settings</a>-->
+
+				<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+    <a href="index.php?page=home" class="nav-link active" data-toggle="" aria-selected="true"><span class='icon-field'><i class="fa fa-home"></i></span>  Home</a>
+    <a href="index.php?page=categories" class="nav-link" data-toggle=""  aria-selected="false"><span class='icon-field'><i class="fa fa-list"></i></span>  Categories</a>
+    <a href="index.php?page=products" class="nav-link" data-toggle="" aria-selected="false"><span class='icon-field'><i class="fa fa-th-list"></i></span>  Products</a>
+    <a href="index.php?page=bids" class="nav-link" data-toggle="" aria-selected="false"><span class='icon-field'><i class="fa fa-money-bill-alt"></i></span>  Bids</a>
+  </div>
+  <div class="tab-content" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+  </div>
 			<?php endif; ?>
 		</div>
 
