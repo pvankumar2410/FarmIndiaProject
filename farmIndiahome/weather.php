@@ -11,7 +11,11 @@
             
         <div class="container" align="left" style="height:50%;font-weight: 20px ">    
         
+<<<<<<< HEAD
+               <h1 style="background-color: blackcolor: white;">Weather !!</h1><br>    
+=======
                <h1 style="background-color: black;color: white;">Weather</h1><br>    
+>>>>>>> 6d7b4b603bd3a6af537a3f97d70729d6ac86e208
             <div class="app-title">    
         
         
