@@ -33,6 +33,7 @@
 
 				<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     <a href="index.php?page=home" class="nav-link active" data-toggle="" aria-selected="true"><span class='icon-field'><i class="fa fa-home"></i></span>  Home</a>
+	<a href="index.php?page=orders" class="nav-link active" data-toggle="" aria-selected="true"><span class='icon-field'><i class="fa fa-clipboard-list"></i></span>  Orders</a>
     <a href="index.php?page=categories" class="nav-link" data-toggle=""  aria-selected="false"><span class='icon-field'><i class="fa fa-list"></i></span>  Categories</a>
     <a href="index.php?page=books" class="nav-link" data-toggle="" aria-selected="false"><span class='icon-field'><i class="fa fa-th-list"></i></span>  Equipments</a>
     <a href="index.php?page=sales_report" class="nav-link" data-toggle="" aria-selected="false"><span class='icon-field'><i class="bi bi-bar-chart-line-fill"></i></span>  Sales Reports</a>

@@ -118,7 +118,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
           <ul>
             <li>Jobs to farmers
             </li>
-            <li>100% of Verified Jobs
+            <li>100% Verified Jobs
             </li>
             <li>Safe and Secure
             </li>
