@@ -10,6 +10,9 @@
     <body>    
             
         <div class="container" align="left" style="height:50%;font-weight: 20px ">    
+
+               
+
             <div class="app-title">    
         
              <h1 style="background-color: black;color: white;">Weather</h1><br>  

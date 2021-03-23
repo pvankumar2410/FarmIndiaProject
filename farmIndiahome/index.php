@@ -118,7 +118,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
           <ul>
             <li>Jobs to farmers
             </li>
-            <li>100% of Verified Jobs
+            <li>100% Verified Jobs
             </li>
             <li>Safe and Secure
             </li>
@@ -154,8 +154,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
     <br>
     <br><br><br><br><br><br>
     <!--row0-->
-    <div><br><br>
-    <table>
+    <div><br><br> <table align="center">
         <tr>
             <td>
                    <iframe src="topbidder.php" scrolling="yes" width="1000px" height="400px">my bidd</iframe>
@@ -224,7 +223,9 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                         <?php 
                          include('weather.php');
                         ?>
+
          <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Place  !?</a>
+
 
                                   </div>
                             </div>

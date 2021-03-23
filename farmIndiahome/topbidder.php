@@ -16,9 +16,11 @@ include("topbidderexp.php");
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
 <div class="container" align="center"  >	
 
+
 	<div class="card-header"><b style="font-size:29px">Most demanding Commodity </b></div>
 
 	<div class="card-header"><b style="font-size:29px">Statistics of Top Selling Products </b></div>
+
 
 	<div class="well-sm col-sm-12">
 		<div class="btn-group pull-right">	

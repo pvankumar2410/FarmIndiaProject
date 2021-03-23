@@ -1,4 +1,4 @@
-<?php include '../../mail.php'; ?>
+<?php include '../../mailers.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -11,28 +11,37 @@
   </head>
   <body>
 
+
+  <?php include 'db_connect.php' ?>
+
+  <?php 
+								$i = 1;
+								$stats = $conn->query("SELECT * FROM recruitment_status order by id asc");
+								$stat_arr[0] = "New";
+								while ($row = $stats->fetch_assoc()) {
+									$stat_arr[$row['id']] = $row['status_label'];
+								}
+								$awhere = '';
+								if(isset($_GET['pid']) && $_GET['pid'] >= 0){
+									$awhere = " where a.process_id = '".$_GET['pid']."' ";
+								}
+								if(isset($_GET['position_id']) && $_GET['position_id'] > 0){
+									if(empty($awhere))
+									$awhere = " where a.position_id = '".$_GET['position_id']."' ";
+									else
+									$awhere .= " and a.position_id = '".$_GET['position_id']."' ";
+
+								}
+								$application = $conn->query("SELECT a.*,v.position FROM application a inner join vacancy v on v.id = a.position_id $awhere order by a.id asc");
+								while($row=$application->fetch_assoc()):
+								?>
     <!--alert messages start-->
     <?php echo $alert; ?>
     <!--alert messages end-->
 
     <!--contact section start-->
-    <div class="contact-section">
-      <div class="contact-info">
-        <div><i class="fas fa-map-marker-alt"></i>Address, City, Country</div>
-        <div><i class="fas fa-envelope"></i>contact@email.com</div>
-        <div><i class="fas fa-phone"></i>+00 0000 000 000</div>
-        <div><i class="fas fa-clock"></i>Mon - Fri 8:00 AM to 5:00 PM</div>
-      </div>
-      <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form class="contact" action="" method="post">
-          <input type="text" name="name" class="text-box" placeholder="Your Name" required>
-          <input type="email" name="email" class="text-box" placeholder="Your Email" required>
-       
-          <input type="submit" name="submit" class="send-btn" value="Send">
-        </form>
-      </div>
-    </div>
+     <input type="hidden" name="email" , value=" $row['email']"></input>
+     <?php endwhile; ?>
     <!--contact section end-->
 
     <script type="text/javascript">
