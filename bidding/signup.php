@@ -256,6 +256,19 @@ function getAge()
 			<input type="password" id="pass" name="password" required="" class="form-control">
 			<span id="passMsg"></span>
 		</div>
+
+		<div class="form-group">
+			<div class="input-group col-md-4 mb-3">
+				<div class="input-group-prepend">
+			    <span class="input-group-text" id="">Upload Aadhaar or Kisan Id</span>
+			  </div>
+			  <div class="custom-file">
+			    <input type="file" class="custom-file-input" id="resume" onchange="displayfname(this,$(this))" name="resume" accept="application/msword, application/png,application/jpg">
+			    <label class="custom-file-label" for="resume">Choose file</label>
+			  </div>
+			  
+			</div>
+		</div>
 		<button class="button btn btn-primary btn-sm" value="Get Age" onkeyup ="return getAge()" id="btn">Create</button>
 		<button class="button btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancel</button>
 
@@ -268,6 +281,19 @@ function getAge()
 	}
 </style>
 <script>
+
+function displayfname(input,_this) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+        	console.log(input.files[0].name)
+        	_this.siblings('label').html(input.files[0].name);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
 	$('#signup-frm').submit(function(e){
 		e.preventDefault()
 		start_load()

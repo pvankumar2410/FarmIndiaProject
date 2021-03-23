@@ -16,6 +16,7 @@
 		start_load()
 		$.ajax({
 			url:'admin/ajax.php?action=save_order',
+		
 			method:'POST',
 			data:$(this).serialize(),
 			error:err=>{

@@ -44,6 +44,13 @@ if(isset($_GET['id'])){
 						<label class="label control-label">Price</label>
 						<input type="text" class="form-control form-control-sm w-100 text-right number text-right" name="price" required="" value="<?php echo isset($price) ? $price : '' ?>">
 					</div>
+
+					<div class="form-group row">
+						<div class="col-md-4">
+							<label for="" class="control-label">Date Of Rent</label>
+							<input type="date" id="renting" name="Date">
+						</div>
+
 					<div class="form-group">
 						<label for="" class="control-label">Image</label>
 						<input type="file" class="form-control" name="img" onchange="displayImg(this,$(this))">

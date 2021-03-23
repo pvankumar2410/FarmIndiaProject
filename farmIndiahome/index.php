@@ -224,11 +224,8 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                         <?php 
                          include('weather.php');
                         ?>
-<<<<<<< HEAD
-         <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Place  !?</a>
-=======
-
->>>>>>> 6d7b4b603bd3a6af537a3f97d70729d6ac86e208
+                
+         <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Place  !?</a
                                   </div>
                             </div>
                         </div>
