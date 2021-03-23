@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+</head>
+<body background="white">
+    <div background="white">
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav class="nav">
+            <div class="form">
+                <input type="text" id="searchtext" placeholder="Search by City"/>
+                <a class="search-btn" id="search" href="#"><i class="fa fa-search" style="color: white"></i></a>
+            </div>
+            <ul class="search-list">
+                <li class="link"><a href="#" class="atag"></a></li>
+            </ul>
+        </nav>
+
+        <div class="current-weather">
+            <div style="border-color: grey;color:white;font-family: sans-serif;font-size: 30px">
+                <div class="date">
+                    <span id="today-day"style="color:white;font-family: sans-serif;font-size: 30px">Wednesday</span>
+                    <span id="today-date"style="color:white;font-family: sans-serif;font-size: 30px">9/9/2020</span>
+                </div>
+                <span id="city" style="color:white;font-family: sans-serif;font-size: 30px">City</span></>
+                <div class="icontemp">
+                     &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp 
+                    <span id="icon"></span>
+                    <strong><span id="temperature">Temperature</span></strong>
+                    <span>F</span>
+                </div>
+                <div class="feels-like">
+                    <span>Feels Like</span>
+                    <strong><span id="feelslike">00</span></strong> F
+
+                </div>
+                <h3><span id="weather" style="color:white;font-family: sans-serif;font-size: 30px">Weather</span></h3>
+                <div class="hwuv">
+                    <div class="humidity">
+                        <h4>Humidity</h4>
+                        <span id="humidity">-</span><span>%</span>
+                    </div>
+                    <div class="windspeed">
+                        <h4>Windspeed</h4>
+                        <span id="windspeed">-</span><span> mph</span>
+                    </div>
+                    <div class="uvindex">
+                        <h4>UV Index</h4>
+                        <div id="uvindex">-</div>
+                    </div>
+                
+                </div>
+
+     
+        </div>
+  <br>
+            <div class="swiper-wrapper" style="text-align: center;">
+                <div  id="slide1"  style="background: white">
+                  &nbsp &nbsp &nbsp  <span id="sliderDate"style="color: black;font-family: sans-serif;font-size:25px;"></span>
+                    <span id="sliderIcon" style="color: black;font-family: sans-serif;"></span><br>
+                    <span style="color: black;font-family: sans-serif;font-size:25px;">High:<span id="high" style="color: black;font-family: sans-serif;font-size:25px;">-</span></span>
+                    <span style="color: black;font-family: sans-serif;font-size:25px;">Low:<span id="low" style="color: black;font-family: sans-serif;font-size:25px;">-</span></span>
+                </div>
+                <div id="slide2" style="background: black">
+                    &nbsp &nbsp &nbsp<span id="sliderDate" style="color: white;font-family: sans-serif;font-size:25px;"></span>
+                    <span id="sliderIcon" style="color: white;font-family: sans-serif;font-size:25px;"></span><br>
+                    <span style="color: white;font-family: sans-serif;font-size:25px;">High:<span id="high" style="color: white;font-family: sans-serif;font-size:25px;">-</span></span>
+                    <span style="color: white;font-family: sans-serif;font-size:25px;">Low:<span id="low" style="color: white;font-family: sans-serif;font-size:25px;">-</span></span>
+                </div>
+                <div  id="slide3" style="background: white">
+                   &nbsp &nbsp &nbsp <span id="sliderDate" style="color: black;font-family: sans-serif;font-size:25px;"></span>
+                    <span id="sliderIcon" style="color: black;font-family: sans-serif;font-size:25px;"></span><br>
+                    <span style="color: black;font-family: sans-serif;font-size:25px;">High:<span id="high" style="color: black;font-family: sans-serif;font-size:25px;">-</span></span>
+                    <span style="color: black;font-family: sans-serif;font-size:25px;">Low:<span id="low" style="color: black;font-family: sans-serif;font-size:25px;">-</span></span>
+                </div>
+                <div  id="slide4" style="background: black">
+                   &nbsp &nbsp &nbsp <span id="sliderDate" style="color: white;font-family: sans-serif;font-size:25px;"></span>
+                    <span id="sliderIcon" style="color: white;font-family: sans-serif;"></span><br>
+                    <span style="color: white;font-family: sans-serif;font-size:25px;" >High:<span id="high" style="color: white;font-family: sans-serif;font-size:25px;">-</span></span>
+                    <span style="color: white;font-family: sans-serif;font-size:25px;">Low:<span id="low" style="color: white;font-family: sans-serif;font-size:25px;">-</span></span>
+                </div>
+                <div  id="slide5" style="background: white">
+                   &nbsp &nbsp &nbsp <span id="sliderDate" style="color: black;font-family: sans-serif;font-size:25px;"></span>
+                    <span id="sliderIcon" style="color: black;font-family: sans-serif;font-size:25px;"></span><br>
+                    <span style="color: black;font-family: sans-serif;font-size:25px;">High:<span id="high" style="color: black;font-family: sans-serif;font-size:25px;">-</span></span>
+                    <span style="color: black;font-family: sans-serif;font-size:25px;">Low:<span id="low" style="color: black;font-family: sans-serif;font-size:25px;">-</span></span>
+                </div>
+                <div  id="slide6" style="background: black">
+                   &nbsp &nbsp &nbsp <span id="sliderDate" style="color: white;font-family: sans-serif;font-size:25px;"></span>
+                    <span id="sliderIcon" style="color: white;font-family: sans-serif;font-size:25px;"></span><br>
+                    <span style="color: white;font-family: sans-serif;font-size:25px;">High:<span id="high" style="color: white;font-family: sans-serif;font-size:25px;">-</span></span>
+                    <span style="color: white;font-family: sans-serif;font-size:25px;">Low:<span id="low" style="color: white;font-family: sans-serif;font-size:25px;">-</span></span>
+                </div>
+                <div id="slide7" style="background: white">
+                  &nbsp &nbsp &nbsp  <span id="sliderDate"style="color: black;font-family: sans-serif;font-size:25px;"></span>
+                    <span id="sliderIcon"style="color: black;font-family: sans-serif;font-size:25px;"></span><br>
+                    <span style="color: black;font-family: sans-serif;font-size:25px;">High:<span id="high" style="color: black;font-family: sans-serif;font-size:25px;">-</span></span>
+                    <span style="color: black;font-family: sans-serif;font-size:25px;">Low:<span id="low" style="color: black;font-family: sans-serif;font-size:25px;">-</span></span>
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+
+        <!-- Swiper -->
+        <div >
+            <style type="text/css">
+                span{
+                    color: white;
+                }
+            </style>
+
+        <!-- Swiper End -->
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            freeMode: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>

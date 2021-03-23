@@ -154,8 +154,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
     <br>
     <br><br><br><br><br><br>
     <!--row0-->
-    <div><br><br>
-    <table>
+    <div><br><br> <table align="center">
         <tr>
             <td>
                    <iframe src="topbidder.php" scrolling="yes" width="1000px" height="400px">my bidd</iframe>
@@ -224,8 +223,15 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                         <?php 
                          include('weather.php');
                         ?>
+<<<<<<< HEAD
                 
          <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Place  !?</a
+=======
+
+         <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Place  !?</a>
+
+
+>>>>>>> 88e5533cef864ed61befb33fb8a35690ab52d785
                                   </div>
                             </div>
                         </div>
