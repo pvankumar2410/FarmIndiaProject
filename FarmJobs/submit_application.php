@@ -60,6 +60,12 @@
 				<textarea name="cover_letter" id="" cols="30" rows="3" placeholder="(Optional)" class="form-control"></textarea>
 			</div>
 		</div>
+		<div class="row form-group" >
+			<div class="col-md-7">
+				<label for="" class="control-label">userid</label>
+				<input type="text" name="user_id" class="form-control" value="<?php echo $user_id ?>" readonly>
+			</div>
+		</div>
 		<div class="row form-group">
 			<div class="input-group col-md-4 mb-3">
 				<div class="input-group-prepend">

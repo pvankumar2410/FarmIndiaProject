@@ -20,9 +20,11 @@
 		<div class="card-body">
 			<div class="row">
 				<div class="col-lg-12">
+					<p><?php echo $user_id ?></p>
 					<h4 class="text-center"><b><?php echo $position ?></b></h4>
 					<hr class="divider" style="max-width: calc(10%)">
 					<p class="text-center">
+
 						<small>
 							<i><b>Needed: <larger><?php echo $availability ?></larger></b></i>
 						</small>
