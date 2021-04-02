@@ -33,6 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../farmIndiahome/index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="mybids.php">My Bids</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../about.php">About</a></li>
                         <?php if(isset($_SESSION['login_id'])): ?>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="admin/ajax.php?action=logout2"><?php echo "Welcome ".$_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>

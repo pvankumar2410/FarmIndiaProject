@@ -80,7 +80,7 @@
     			<h4 class="text-right"><b id="tamount"><?php echo number_format($total,2) ?></b></h4>
     		</div>
     	</div>
-    	<button  class="btn btn-block btn-primary" onclick="window.location.href='../PaytmKit/TxnTest.php'" id="checkout" type="button">Checkout</nutton>
+    	<button  class="btn btn-block btn-primary" onclick="window.location.href='../PaytmKit/TxnTest.php'" id="checkout" type="button">Checkout</button>
     </div>
 </div>
 </div>

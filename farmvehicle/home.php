@@ -96,8 +96,11 @@ $cid = isset($_GET['category_id']) ? $_GET['category_id'] : 0;
                              </div>
                             <?php endwhile; ?>
                             </div>
+                            
                     </div>
+                    
                 </div>
+                
             </div>
         </div>
     </div>

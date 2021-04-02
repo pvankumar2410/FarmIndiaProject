@@ -43,7 +43,7 @@ session_start();
                         <?php if(isset($_SESSION['login_id'])): ?>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../bidding/admin/ajax.php?action=logout2"><?php echo "Welcome ".$_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
                       <?php else: ?>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="Login">Login</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="Login">Not Logged In</a></li>
                       <?php endif; ?>
                     </ul>
                 </div>
@@ -223,15 +223,10 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                         <?php 
                          include('weather.php');
                         ?>
-<<<<<<< HEAD
-                
-         <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Place  !?</a
-=======
 
-         <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Place  !?</a>
+         <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Places ?</a>
 
 
->>>>>>> 88e5533cef864ed61befb33fb8a35690ab52d785
                                   </div>
                             </div>
                         </div>
@@ -302,7 +297,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                 <div class="social d-flex justify-content-center">
                     <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                     <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="https://github.com/tejareddy8303"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </section>

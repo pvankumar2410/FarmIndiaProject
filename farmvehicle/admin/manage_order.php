@@ -89,6 +89,14 @@ if(isset($_GET['id'])){
 							<option value="1" <?php echo $status == 1 ? 'selected' : '' ?>>Confirmed</option>
 						</select>
 					</div>
+					<div class="form-group">
+						<label for="" class="control-label">Cancel Approval</label>
+						<select name="cancel" id="cancel" class="custom-select custom-select-sm">
+							<option value="0" <?php echo $cancel == 0 ? 'selected' : '' ?>>Not Approved</option>
+							<option value="1" <?php echo $cancel == 1 ? 'selected' : '' ?>>Approved</option>
+						</select>
+					</div>
+					<p>Expected Delivery Date: <b><?php echo number_format($total,2) ?></b></p>
 				</div>
 			</div>
 		</div>
