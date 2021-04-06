@@ -1,8 +1,7 @@
 <?php include "php/read2.php"; 
-include'db_conn.php';
-
+include'db_conn.php'
 ?>
-
+<?php include 'db_connect.php' ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +35,7 @@ include'db_conn.php';
  
 	<div class="container">
 		<div class="box">
-			<h4 class="display-4 text-center" style="font-size :30px">My Applications</h4><br>
+			<h4 class="display-4 text-center" style="font-size :30px">My Jobs</h4><br>
 
 				<a href="postjobs.php" class="btn btn-primary dropdown-toggle">New Job</a>
 			
@@ -50,10 +49,10 @@ include'db_conn.php';
 			  <thead>
 			    <tr>
 			      <th scope="col">#</th>
-			      <th scope="col">Name </th>
-			      <th scope="col" >email </th>
-			       <th scope="col">contact</th>
-			      <th scope="col">Address</th>
+			      <th scope="col">Position</th>
+			      <th scope="col">Availability</th>
+			       <th scope="col">Description</th>
+			      <th scope="col">Salary</th>
 			      <th scope="col">Action</th>
 
 			    </tr>
@@ -66,17 +65,16 @@ include'db_conn.php';
 			  	 ?>
 			    <tr>
 			      <th scope="row"><?=$i?></th>
-			      <td><?=$rows['firstname']?> <?php echo $rows['middlename']; ?> <?php echo $rows['lastname']; ?></td>
-			      <td><?=$rows['email']?> </td>
-			       <td><?=$rows['contact']?></td>
-			        <td><?=$rows['address']?> </td>
-			      <td>
-			      	  <a href="php/deletejobs.php?id=<?=$rows['id']?>" 
-			      	     class="btn btn-primary dropdown-toggle">Delete</a>
+			      <td><?=$rows['position']?></td>
+			      <td><?php echo $rows['availability']; ?></td>
+			       <td><?php echo $rows['description']; ?></td>
+			        <td><?php echo $rows['salary']; ?></td>
+			      <td><a href="update.php?id=<?=$rows['id']?>" 
+			      	     class="btn btn-primary dropdown-toggle">Update</a>
 
+			      	  <a href="php/delete.php?id=<?=$rows['id']?>" 
+			      	     class="btn btn-primary dropdown-toggle">Delete</a>
 			      </td>
-			      <td>	  <a href="php/upmail.php?id=<?=$rows['id']?>" 
-			      	     class="btn btn-primary dropdown-toggle">Update</a></td>
 			    </tr>
 			    <?php } ?>
 			  </tbody>

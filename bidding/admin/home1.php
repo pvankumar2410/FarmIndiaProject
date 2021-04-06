@@ -49,7 +49,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 
 <?php 
 }else{
-     header("Location: index.php");
+     header("Location: index1.php");
      exit();
 }
  ?>

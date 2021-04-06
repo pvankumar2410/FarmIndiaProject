@@ -1,6 +1,16 @@
 <?php 
 session_start(); 
-include "db_conn.php";
+$sname= "localhost";
+$unmae= "root";
+$password = "";
+
+$db_name = "bidding_db";
+
+$conn = mysqli_connect($sname, $unmae, $password, $db_name);
+
+if (!$conn) {
+	echo "Connection failed!";
+}
 
 if (isset($_POST['uname']) && isset($_POST['password'])) {
 
@@ -15,17 +25,17 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
 	$pass = validate($_POST['password']);
 
 	if (empty($uname)) {
-		header("Location: index.php?error=User Name is required");
+		header("Location: index1.php?error=User Name is required");
 	    exit();
 	}else if(empty($pass)){
-        header("Location: index.php?error=Password is required");
+        header("Location: index1.php?error=Password is required");
 	    exit();
 	}else{
 		// hashing the password
         $pass = md5($pass);
 
         
-		$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
+		$sql = "SELECT * FROM `farmer` WHERE user_name='$uname' AND password='$pass'";
 
 		$result = mysqli_query($conn, $sql);
 
@@ -35,19 +45,19 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
             	$_SESSION['user_name'] = $row['user_name'];
             	$_SESSION['name'] = $row['name'];
             	$_SESSION['id'] = $row['id'];
-            	header("Location: home.php");
+            	header("Location: home1.php");
 		        exit();
             }else{
-				header("Location: index.php?error=Incorect User name or password");
+				header("Location: index1.php?error=Incorect User name or password");
 		        exit();
 			}
 		}else{
-			header("Location: index.php?error=Incorect User name or password");
+			header("Location: index1.php?error=Incorect User name or password");
 	        exit();
 		}
 	}
 	
 }else{
-	header("Location: index.php");
+	header("Location: index1.php");
 	exit();
 }

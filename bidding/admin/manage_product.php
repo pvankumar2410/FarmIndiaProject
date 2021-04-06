@@ -7,6 +7,11 @@ foreach($qry->fetch_array() as $k => $val){
 }
 }
 ?>
+<?php 
+
+if (isset($_SESSION['id']) && isset($_SESSION['name'])) {
+}
+ ?>
 <style>
 	
 	.jqte_editor{
@@ -135,6 +140,14 @@ img#img_path-field{
 						<div class="col-md-4">
 							<label for="" class="control-label">Name</label>
 							<input type="text" class="form-control" name="name"  value="<?php echo isset($name) ? $name :'' ?>" required>
+						</div>
+					
+					</div>
+
+                    <div class="form-group row">
+						<div class="col-md-4">
+							<label for="" class="control-label">User_id</label>
+							<input type="text" class="form-control" name="name"  value="<?php  ?>" required>
 						</div>
 					
 					</div>

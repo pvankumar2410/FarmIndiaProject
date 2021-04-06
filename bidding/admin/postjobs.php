@@ -1,4 +1,10 @@
-<?php include 'db_conn.php' ?>
+<?php 
+   include_once("db_conn.php"); // Added the missing semi-colon
+   session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+}
+ ?>
 <?php
 if(isset($_GET['id'])){
 $qry = $conn->query("SELECT * FROM products where id= ".$_GET['id']);
@@ -7,141 +13,46 @@ foreach($qry->fetch_array() as $k => $val){
 }
 }
 ?>
-<style>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>manage products </title>
+
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen"
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
   
-  .jqte_editor{
-    min-height: 30vh !important
-  }
-  #drop {
-    min-height: 15vh;
-    max-height: 30vh;
-    overflow: auto;
-    width: calc(100%);
-    border: 5px solid #929292;
-    margin: 10px;
-    border-style: dashed;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-  #uploads {
-    min-height: 15vh;
-  width: calc(100%);
-  margin: 10px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  }
-  #uploads .img-holder{
-      position: relative;
-      margin: 1em;
-      cursor: pointer;
-  }
-  #uploads .img-holder:hover{
-      background: #0095ff1f;
-  }
-  #uploads .img-holder .form-check{
-      display: none;
-  }
-  #uploads .img-holder.checked .form-check{
-      display: block;
-  }
-  #uploads .img-holder.checked{
-      background: #0095ff1f;
-  }
-  #uploads .img-holder img {
-    height: 39vh;
-    width: 22vw;
-    margin: .5em;
-    }
-  #uploads .img-holder span{
-      position: absolute;
-      top: -.5em;
-      left: -.5em;
-  }
-  #dname{
-    margin: auto 
-  }
-img.imgDropped {
-    height: 16vh;
-    width: 7vw;
-    margin: 1em;
-}
-.imgF {
-    border: 1px solid #0000ffa1;
-    border-style: dashed;
-    position: relative;
-    margin: 1em;
-}
-span.rem.badge.badge-primary {
-    position: absolute;
-    top: -.5em;
-    left: -.5em;
-    cursor: pointer;
-}
-label[for="chooseFile"]{
-  color: #0000ff94;
-  cursor: pointer;
-}
-label[for="chooseFile"]:hover{
-  color: #0000ffba;
-}
-.opts {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: #00000094;
-    width: calc(100%);
-    height: calc(100%);
-    justify-items: center;
-    display: flex;
-    opacity: 0;
-    transition: all .5s ease;
-}
-.img-holder:hover .opts{
-    opacity: 1;
+</head>
+<body>
+  <div>
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="home1.php">FarmIndia</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="home1.php">Home</a></li>
+      <li><a href="read1.php">MY JOBS</a></li>
+      <li><a href="postjobs.php">NEW JOB</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="logout1.php"><span class="glyphicon glyphicon-log-in"></span> Hello , <?php echo $_SESSION['user_name']; ?></a></li>
+    </ul>
+  </div>
+</nav> 
+<div>
+<form >
 
-}
-  input[type=checkbox]
-{
-  /* Double-sized Checkboxes */
-  -ms-transform: scale(1.5); /* IE */
-  -moz-transform: scale(1.5); /* FF */
-  -webkit-transform: scale(1.5); /* Safari and Chrome */
-  -o-transform: scale(1.5); /* Opera */
-  transform: scale(1.5);
-  padding: 10px;
-}
-button.btn.btn-sm.btn-rounded.btn-sm.btn-dark {
-    margin: auto;
-}
-img#img_path-field{
-    max-height: 15vh;
-    max-width: 8vw;
-  }
-</style>
+  <div align="center">
+     <h1>POST CROPS</h1>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" name="name"  value="<?php echo isset($name) ? $name :'' ?>" required>
+  </div>
 
-<div class="container-fluid">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-body">
-        <form action="" id="manage-product">
-          <input type="hidden" name="id" value="<?php echo isset($id) ? $id :'' ?>">
-          <h4><b><?php echo !isset($id) ? "New Product" : "Manage Product" ?></b></h4>
-          <hr>
-          <div class="form-group row">
-            <div class="col-md-4">
-              <label for="" class="control-label">Name</label>
-              <input type="text" class="form-control" name="name"  value="<?php echo isset($name) ? $name :'' ?>" required>
-            </div>
-          
-          </div>
-          <div class="form-group row">
-            <div class="col-md-4">
-              <label for="" class="control-label">Category</label>
-              <select class="custom-select select2" name="category_id">
+            <div class="form-group row">
+              <label for="" class="control-label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCategory</label>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select class="custom-select select2" name="category_id">
                 <option value=""></option>
                 <?php
                 $qry = $conn->query("SELECT * FROM categories order by name asc");
@@ -152,57 +63,62 @@ img#img_path-field{
               </select>
             </div>
 
-          </div>
-          <div class="form-group row">
-            <div class="col-md-10">
-              <label for="" class="control-label">Description</label>
-              <textarea name="description" id="description" class="form-control" cols="30" rows="5" required><?php echo isset($description) ? html_entity_decode($description) : '' ?></textarea>
-            </div>
-          </div>
           
-          <div class="form-group row">
-            <div class="col-md-4">
-              <label for="" class="control-label">Regular Price</label>
-              <input type="number" class="form-control text-right" min="1" name="regular_price" value="<?php echo isset($regular_price) ? $regular_price : 0 ?>">
-            </div>
-            <div class="col-md-4">
-              <label for="" class="control-label">Starting Bidding Amount</label>
-              <input type="number" class="form-control text-right" min="1" name="start_bid" value="<?php echo isset($start_bid) ? $start_bid : 0 ?>">
-            </div>
-          </div>
-          <div class="form-group row">
-            <div class="col-md-4">
-              <label for="" class="control-label">Bidding End Date/Time</label>
-              <input type="text" class="form-control datetimepicker" id ="datepicker" name="bid_end_datetime" value="<?php echo isset($bid_end_datetime) && strtotime($bid_end_datetime) > 0 ? date("Y-m-d H:i",strtotime($bid_end_datetime)) : '' ?>">
-            </div>
-           <script>
-
-    </script>
-          </div>
-          <div class=" row form-group">
+  <div class="form-group">
+    <label for="Description">Description</label>
+    <textarea name="description" id="description" class="form-control" cols="30" rows="5" required><?php echo isset($description) ? html_entity_decode($description) : '' ?></textarea>
+  </div>
+  <div class=" row form-group">
             <div class="col-md-5">
               <label for="" class="control-label">Product Image</label>
               <input type="file" class="form-control" name="img" onchange="displayImg2(this,$(this))">
             </div>
 
             <div class="col-md-5">
-              <img src="<?php echo isset($img_fname) ? '../admin/assets/uploads/'.$img_fname :'' ?>" alt="" id="img_path-field">
+              <img src="<?php echo isset($img_fname) ? 'assets/uploads/'.$img_fname :'' ?>" alt="" id="img_path-field">
             </div>
           </div>
-          <div class="row">
-            <div class="col-md-12">
-              <button class="btn btn-sm btn-block btn-primary col-sm-2" > Save</button>
-            </div>
-          </div>
-        </form>
-      </div>
+  <div id="datetimepicker" class="form-group">
+      <label for="bidtime">Bid Time End</label>
+      <input type="text" name="bid_end_datetime" value="<?php echo isset($bid_end_datetime) && strtotime($bid_end_datetime) > 0 ? date("Y-m-d H:i",strtotime($bid_end_datetime)) : '' ?>"></input>
+      <span class="add-on">
+        <i  data-time-icon="icon-time" data-date-icon="icon-calendar" ></i>
+      </span>
     </div>
+    <div>
+      <label for="Regular" class="form-group">Regular Price </label>
+      <input type="number" class="form-control text-right" min="1" name="regular_price" value="<?php echo isset($regular_price) ? $regular_price : 0 ?>"/>
+    </div>
+    <div class="form-group">
+        <label for="starting">Strating Bid Price</label>
+ <input type="number" class="form-control text-right" min="1" name="start_bid" value="<?php echo isset($start_bid) ? $start_bid : 0 ?>"/>
+    </div>
+    <script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script> 
+    <script type="text/javascript"
+     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
+    </script>
+    <script type="text/javascript">
+      $('#datetimepicker').datetimepicker({
+        format: 'dd/MM/yyyy hh:mm:ss',
+        language: 'pt-BR'
+      });
+    </script>
+    <button class="btn btn-sm btn-block btn-primary col-sm-2">save</button>
   </div>
-</div>
+
+</form>
 <div class="imgF" style="display: none " id="img-clone">
       <span class="rem badge badge-primary" onclick="rem_func($(this))"><i class="fa fa-times"></i></span>
   </div>
-<script>
+  <script>
   $('#payment_status').on('change keypress keyup',function(){
     if($(this).prop('checked') == true){
       $('#amount').closest('.form-group').hide()
@@ -217,7 +133,7 @@ img#img_path-field{
     start_load()
     $('#msg').html('')
     $.ajax({
-      url:'../admin/ajax.php?action=save_product',
+      url:'ajax.php?action=save_product',
       data: new FormData($(this)[0]),
         cache: false,
         contentType: false,
@@ -366,3 +282,23 @@ function rem_func(_this){
     }
 }
 </script>
+/*
+<?php $id=$_SESSION['id'];
+   $Position = $_POST[''];
+   $Salary = $_POST['Salary'];
+   $Availability = $_POST['Availability'];
+   $Description = $_POST['Description'];
+   $sql = "INSERT INTO vacancy (position,salary,availability,user_id,description)
+   VALUES ('$Position','$Salary','$Availability','$id','$Description')";
+   if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully !";
+    header("Location: postjobs.php");
+   } else {
+    echo "Error: " . $sql . "
+" . mysqli_error($conn);
+   }
+   mysqli_close($conn);
+}
+?>*/
+</body>
+</html>

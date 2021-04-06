@@ -1,12 +1,9 @@
-<?php include "php/read2.php"; 
-include'db_conn.php';
-
-?>
-
+<?php include "php/read.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Create</title>
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -14,10 +11,10 @@ include'db_conn.php';
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-		<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">FarmIndia</a>
@@ -26,7 +23,7 @@ include'db_conn.php';
       <li class="active"><a href="home.php">Home</a></li>
       <li><a href="read.php">MY JOBS</a></li>
       <li><a href="postjobs.php">NEW JOB</a></li>
-       <li><a href="myjobs.php">APPLICATIONS</a></li>
+       <li><a href="app.php">APPLICATIONS</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Hello , <?php echo $_SESSION['name']; ?></a></li>
@@ -36,7 +33,7 @@ include'db_conn.php';
  
 	<div class="container">
 		<div class="box">
-			<h4 class="display-4 text-center" style="font-size :30px">My Applications</h4><br>
+			<h4 class="display-4 text-center" style="font-size :30px">My Jobs</h4><br>
 
 				<a href="postjobs.php" class="btn btn-primary dropdown-toggle">New Job</a>
 			
@@ -46,14 +43,15 @@ include'db_conn.php';
 		    </div>
 		    <?php } ?>
 			<?php if (mysqli_num_rows($result)) { ?>
+			
 			<table class="table table-striped">
 			  <thead>
 			    <tr>
 			      <th scope="col">#</th>
-			      <th scope="col">Name </th>
-			      <th scope="col" >email </th>
-			       <th scope="col">contact</th>
-			      <th scope="col">Address</th>
+			      <th scope="col">Position</th>
+			      <th scope="col">Availability</th>
+			       <th scope="col">Description</th>
+			      <th scope="col">Salary</th>
 			      <th scope="col">Action</th>
 
 			    </tr>
@@ -66,17 +64,16 @@ include'db_conn.php';
 			  	 ?>
 			    <tr>
 			      <th scope="row"><?=$i?></th>
-			      <td><?=$rows['firstname']?> <?php echo $rows['middlename']; ?> <?php echo $rows['lastname']; ?></td>
-			      <td><?=$rows['email']?> </td>
-			       <td><?=$rows['contact']?></td>
-			        <td><?=$rows['address']?> </td>
-			      <td>
-			      	  <a href="php/deletejobs.php?id=<?=$rows['id']?>" 
-			      	     class="btn btn-primary dropdown-toggle">Delete</a>
+			      <td><?=$rows['position']?></td>
+			      <td><?php echo $rows['availability']; ?></td>
+			       <td><?php echo $rows['description']; ?></td>
+			        <td><?php echo $rows['salary']; ?></td>
+			      <td><a href="update.php?id=<?=$rows['id']?>" 
+			      	     class="btn btn-primary dropdown-toggle">Update</a>
 
+			      	  <a href="php/delete.php?id=<?=$rows['id']?>" 
+			      	     class="btn btn-primary dropdown-toggle">Delete</a>
 			      </td>
-			      <td>	  <a href="php/upmail.php?id=<?=$rows['id']?>" 
-			      	     class="btn btn-primary dropdown-toggle">Update</a></td>
 			    </tr>
 			    <?php } ?>
 			  </tbody>

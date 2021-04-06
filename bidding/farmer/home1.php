@@ -27,20 +27,29 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
       <li class="active"><a href="#">Home</a></li>
       <li><a href="read.php">MY JOBS</a></li>
       <li><a href="postjobs.php">NEW JOB</a></li>
-       <li><a href="mail.php">APPLICATIONS</a></li>
+       <li><a href="app.php">APPLICATIONS</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Hello , <?php echo $_SESSION['name']; ?></a></li>
     </ul>
   </div>
 </nav> 
-   
+    <!-- <h1 style="color: black" >Hello FarmIndia Employeer,<br> <?php echo $_SESSION['name']; ?></h1>
+
+      <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Manage Account
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="change-password.php">Change Password</a></li>
+    <li><a href="logout.php">Logout</a></li>
+  </ul>
+</div> -->
 </body>
 </html>
 
 <?php 
 }else{
-     header("Location: index.php");
+     header("Location: index1.php");
      exit();
 }
  ?>
