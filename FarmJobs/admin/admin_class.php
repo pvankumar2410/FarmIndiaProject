@@ -178,6 +178,7 @@ Class Action {
 		$data .= ", contact = '$contact' ";
 		$data .= ", email = '$email' ";
 		$data .= ", gender = '$gender' ";
+		$data .= ", user_id = '$user_id' ";
 		$data .= ", cover_letter = '".htmlentities(str_replace("'","&#x2019;",$cover_letter))."' ";
 		$data .= ", position_id = '$position_id' ";
 		if(isset($status))

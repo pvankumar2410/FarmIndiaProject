@@ -54,11 +54,12 @@
     					<div class="detail-field">
     						<p>TYPE: <b><?php echo $row['title'] ?></b></p>
     						<p>Equipment name: <b><?php echo $row['author'] ?></b></p>
-    						<p>Price: <b><?php echo number_format($row['price'],2) ?></b></p>
+    						<p>Price for 1 day: <b><?php echo number_format($row['price'],2) ?></b></p>
     						<div class="d-flex col-sm-5">
-					            <span class="btn btn-sm btn-secondary btn-minus"><b><i class="fa fa-minus"></i></b></span>
-					            <input type="number" name="qty" id="" class="form-control form-control-sm qty-input" value="<?php echo $row['qty'] ?>">
-					            <span class="btn btn-sm btn-secondary btn-plus"><b><i class="fa fa-plus"></i></b></span>
+                                <p>Total Days </p> &nbsp&nbsp<br>
+					           
+					            <input type="text" name="qty" id="" class="form-control form-control-sm qty-input" value="<?php echo $row['qty'] ?>" readonly>
+					          
 					        </div>
     					</div>
     					<div class="amount-field">
