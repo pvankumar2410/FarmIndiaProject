@@ -18,10 +18,23 @@ if(isset($_GET['id'])){
 						<label class="label control-label">Equipment Name</label>
 						<input type="text" class="form-control form-control-sm w-100" name="title" required="" value="<?php echo isset($title) ? $title : '' ?>">
 					</div>
+
+					<div class="form-group row">
+						<div class="col-md-4">
+							<label for="" class="control-label">Quantity</label>
+							<input type="number" class="form-control" name="qty" id="qty" value="<?php echo isset($qty) ? $qty :'' ?>">
+						</div>
+					
+					</div>
+
+
+
+
 					<div class="form-group">
 						<label class="label control-label">Equipment brand</label>
 						<input type="text" class="form-control form-control-sm w-100" name="author" required="" value="<?php echo isset($author) ? $author : '' ?>">
 					</div>
+					
 					<div class="form-group">
 						<label class="label control-label">Description</label>
 						<textarea name="description" id="" cols="30" rows="3" class="form-control" required=""><?php echo isset($description) ? $description : '' ?></textarea>
@@ -44,6 +57,9 @@ if(isset($_GET['id'])){
 						<label class="label control-label">Price</label>
 						<input type="text" class="form-control form-control-sm w-100 text-right number text-right" name="price" required="" value="<?php echo isset($price) ? $price : '' ?>">
 					</div>
+
+		
+
 					<div class="form-group">
 						<label for="" class="control-label">Image</label>
 						<input type="file" class="form-control" name="img" onchange="displayImg(this,$(this))">

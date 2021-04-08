@@ -1,5 +1,11 @@
-<?php include('db_connect.php');?>
-
+<?php include('admin/db_connect.php');?>
+<?php session_start(); ?>
+<html>
+	<head>
+		<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<body>
 <div class="container-fluid">
 	
 	<div class="col-lg-12">
@@ -8,63 +14,82 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<b>order List</b>
+						<h2><b>My Orders</b></h2>
 					</div>
 					<div class="card-body">
-						<table class="table table-bordered table-hover">
-							<colgroup>
-								<col width="5%">
-								<col width="15%">
-								<col width="20%">
-								<col width="20%">
-								<col width="15%">
-								<col width="15%">
-								<col width="10%">
-							</colgroup>
+						<table class="table table-hover">
+						
 							<thead>
 								<tr>
-									<th class="text-center">#</th>
-									<th class="text-center">Date</th>
-									<th class="text-center">Customer</th>
-									<th class="text-center">Items</th>
-									<th class="text-center">Total Amount</th>
-									<th class="text-center">Status</th>
-									<th class="text-center">Action</th>
+									<th scope="col">No.</th>
+									<th scope="col">Date</th>
+									<th scope="col">Ordered Customer Name</th>
+									<th scope="col">Product Name</th>
+									<th scope="col">Quantity</th>
+									<th scope="col">Total Amount</th>
+									<th scope="col">Status</th>
+									<th scope="col">Cancellation      Status</th>
+                                    <th scope="col">Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php 
 								$i = 1;
-								$orders = $conn->query("SELECT o.*,c.name FROM orders o inner join customers c on c.id = o.customer_id order by unix_timestamp(o.date_created) asc ");
-								while($row=$orders->fetch_assoc()):
+                                $customer_id = $_SESSION['login_id'];
+
+                                //$orders = $conn->query("SELECT o.*,c.name, FROM orders o inner join customers c on c.id where o.customer_id = '$customer_id'");
+								//$orders = $conn->query("SELECT o.*,c.name FROM orders o inner join customers c on c.id = o.customer_id order by unix_timestamp(o.date_created) asc ");
+                                $orders = $conn->query("SELECT o.*,c.name, b.title FROM orders o, books b inner join customers c on c.id = '$customer_id' order by unix_timestamp(o.date_created) asc ");
+								while($row=$orders->fetch_array()):
 									$tamount = $conn->query("SELECT sum(price * qty) as amount from order_list where order_id = ".$row['id'])->fetch_array()['amount'];
 									$items = $conn->query("SELECT sum(qty) as items from order_list where order_id = ".$row['id'])->fetch_array()['items'];
 								?>
 								<tr>
-									<td class="text-center"><?php echo $i++ ?></td>
+									<td ><?php echo $i++ ?></td>
 									<td class="">
 										<p><b><?php echo date("M d,Y",strtotime($row['date_created'])) ?></b></p>
 									</td>
 									<td class="">
 										<p><b><?php echo ucwords($row['name']) ?></b></p>
 									</td>
-									<td class="text-center">
+									<td class=""> 
+										<p><b><?php echo ucwords($row['title']) ?></b></p>
+									</td>
+									
+									<td >
+
 										<p><b><?php echo $items ?></b></p>
 									</td>
 									<td class="">
 										<p class="text-right"><b><?php echo number_format($tamount,2) ?></b></p>
 									</td>
-									<td class="text-center">
+									<td >
 										<?php if($row['status'] == 0): ?>
-											<span class="badge badge-primary">Pending</span>
+											<span>Pending</span>
 										<?php elseif($row['status'] == 1): ?>
-											<span class="badge badge-success">Confirmed</span>
+											<span>Confirmed</span>
+
 										<?php endif; ?>
 									</td>
-									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_order" type="button" data-id="<?php echo $row['id'] ?>">View</button>
-										<button class="btn btn-sm btn-danger delete_order" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
+									<td >
+										<?php
+										$a = NULL;
+										?>
+										<?php if($row['cancel'] == 0): ?>
+											<span>Rejected</span>
+										<?php elseif($row['cancel'] == 1): ?>
+											<span>Approved</span>
+											<?php else: ($row['cancel'] == $a) ?>
+												<span>N/P</span>
+											
+
+										<?php endif; ?>
 									</td>
+									<td class="">
+										<a href="cancel.html"> Cancel Order </a>
+									</td>
+                                    
+									
 								</tr>
 								<?php endwhile; ?>
 							</tbody>
@@ -161,3 +186,5 @@
 	}
 	$('table').dataTable()
 </script>
+</body>
+</html>

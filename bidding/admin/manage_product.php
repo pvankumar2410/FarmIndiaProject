@@ -144,6 +144,7 @@ img#img_path-field{
 					
 					</div>
 
+<<<<<<< HEAD
                     <div class="form-group row">
 						<div class="col-md-4">
 							<label for="" class="control-label">User_id</label>
@@ -151,6 +152,18 @@ img#img_path-field{
 						</div>
 					
 					</div>
+=======
+					<div class="form-group row">
+						<div class="col-md-4">
+							<label for="" class="control-label">Quantity</label>
+							<input type="number" class="form-control" name="qty" id="qty" value="<?php echo isset($qty) ? $qty :'' ?>">
+						</div>
+					
+					</div>
+
+
+
+>>>>>>> 03f598935823d2b4b8b287ff56a9943eb560e3a0
 					<div class="form-group row">
 						<div class="col-md-4">
 							<label for="" class="control-label">Category</label>

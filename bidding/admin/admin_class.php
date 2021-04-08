@@ -110,11 +110,19 @@ Class Action {
 		$data .= ", aadhaar = '$aadhaar' ";
 		$data .= ", date = '$date' ";
 		$data .= ", password = '".md5($password)."' ";
+		if($_FILES['resume']['tmp_name'] != ''){
+			$fname = strtotime(date('y-m-d H:i')).'_'.$_FILES['resume']['name'];
+			$move = move_uploaded_file($_FILES['resume']['tmp_name'],'assets/resume/'. $fname);
+		$data .= ", resume_path = '$fname' ";
+
+}
 		$chk = $this->db->query("SELECT * FROM users where email = '$email' ")->num_rows;
 		if($chk > 0){
 			return 2;
 			exit;
 		}
+
+		
 			$save = $this->db->query("INSERT INTO users set ".$data);
 		if($save){
 			$login = $this->login2();

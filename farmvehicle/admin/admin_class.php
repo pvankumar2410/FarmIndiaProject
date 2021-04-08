@@ -320,7 +320,7 @@ Class Action {
 	function save_order(){
 		extract($_POST);
 		$data = " customer_id = {$_SESSION['login_id']} ";
-		$data .= ", address = '$address' ";
+		//$data .= ", address = '$address' ";
 		$save = $this->db->query("INSERT INTO orders set $data");
 		if($save){
 			$id = $this->db->insert_id;
@@ -330,17 +330,20 @@ Class Action {
 				$data .= ", book_id = {$row['book_id']} ";
 				$data .= ", qty = {$row['qty']} ";
 				$data .= ", price = '{$row['price']}'";
+				
 				if($order[] = $this->db->query("INSERT INTO order_list set $data")){
 					$this->db->query("DELETE FROM cart where id ='{$row['id']}' ");
 				}
 			}
 			if(isset($order))
-				return 1;
+				echo "<h5>Payment Sucessfull!!</h5> <a href='../index.php'>Continue</a>";
+				
 		}
 	}
 	function update_order(){
 		extract($_POST);
 		$save = $this->db->query("UPDATE orders set status = $status where id = $id");
+		$save = $this->db->query("UPDATE orders set cancel = $cancel where id = $id");
 		if($save)
 			return 1;
 
