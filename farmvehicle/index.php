@@ -67,7 +67,7 @@
                           </li>
                       <?php endif; ?>
                       <li class="nav-item"><a class="nav-link js-scroll-trigger" href="myorders2.php"> <i class="bi bi-bag-check-fill"></i>My Orders</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../about.php">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../farmindiahome/#about">About</a></li>
                         <?php if(isset($_SESSION['login_id'])): ?>
                        <div class=" dropdown mr-4">
                             <a href="#" class="text-white dropdown-toggle"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>

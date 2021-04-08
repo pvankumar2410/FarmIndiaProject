@@ -91,7 +91,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
       <div class="col-sm-4 services-box hoverServices">
       
           <h3 class="services-subheading">
-           FarmIndia Action System 
+           FarmIndia Auction System 
           </h3>
         
         <div class="info col-lg-10 col-lg-offset-1">
@@ -103,7 +103,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             <li>Safe and Secure
             </li>
             <br>
-            <a class="btn btn-primary js-scroll-trigger" href="../bidding/index.php">Visit Page</a>
+            <a class="btn btn-outline-primary" href="../bidding/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
@@ -114,7 +114,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
         FarmIndia Jobs 
           </h3>
         
-        <div class="info col-lg-10 col-lg-offset-1">
+        <div class="text-left">
           <ul>
             <li>Jobs to farmers
             </li>
@@ -124,7 +124,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <br>
             
-            <a class="btn btn-primary js-scroll-trigger" href="../FarmJobs/index.php">Visit Page</a>
+            <a class="btn btn-outline-primary" href="../FarmJobs/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
@@ -135,7 +135,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             FarmIndia Shop
           </h3>
      
-        <div class="info col-lg-10 col-lg-offset-1">
+        <div class="text-left">
           <ul>
             <li>Best Prices
             </li>
@@ -145,7 +145,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <br>
             
-            <a class="btn btn-primary js-scroll-trigger" href="../farmvehicle/index.php">Visit Page</a>
+            <a class="btn btn-outline-primary" href="../farmvehicle/index.php">Visit Page</a>
           </ul>
         </div>
       </div>

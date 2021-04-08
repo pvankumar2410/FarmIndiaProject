@@ -30,7 +30,7 @@ include("topbidderexp.php");
 		</div>
 
 	</div>				  
-
+	<span class="border-top-0">
 		<table id="" class="table table-striped table-bordered" border="2%/" >
 		<tr>
 			<th class="text-center">Bid Amount</th>
@@ -49,7 +49,8 @@ include("topbidderexp.php");
 			   </tr>
 			<?php } ?>
 		</tbody>
-    </table>		
+    </table>
+	<span class="border-top-0"></span>		
 </div>
 
 

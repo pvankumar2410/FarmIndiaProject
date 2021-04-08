@@ -141,7 +141,7 @@ img#img_path-field{
 
 					<div class="form-group row">
 						<div class="col-md-4">
-							<label for="" class="control-label">Quantity</label>
+							<label for="" class="control-label">Quantity (Kgs)</label>
 							<input type="number" class="form-control" name="qty" id="qty" value="<?php echo isset($qty) ? $qty :'' ?>">
 						</div>
 					

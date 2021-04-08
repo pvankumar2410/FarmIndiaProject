@@ -18,7 +18,7 @@ $category = $cat_qry->num_rows > 0 ? $cat_qry->fetch_array()['name'] : '' ;
 <div class="container-fluid">
 	<img src="admin/assets/uploads/<?php echo $img_fname ?>" class="d-flex w-100" alt="">
 	<p>Name: <large><b><?php echo $name ?></b></large></p>
-	<p>Available Quantity: <large><b><?php echo $qty ?></b></large></p>
+	<p>Available Quantity (kgs): <large><b><?php echo $qty ?></b></large></p>
 	<p>Category: <b><?php echo $category ?></b></p>
 	<p>Starting Amount: <b><?php echo number_format($start_bid,2) ?></b></p>
 	<p>Until: <b><?php echo date("m d,Y h:i A",strtotime($bid_end_datetime)) ?></b></p>

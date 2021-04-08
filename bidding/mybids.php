@@ -2,6 +2,8 @@
 <?php session_start();?>
 <html>
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -10,18 +12,18 @@
 			<!-- Table Panel -->
 			
 			
-						<b>List of Bids</b>
+					<center>	<h2><b>Your Bids</b></h2></center>
 					</div>
 					<div class="card-body">
 						<table class="table table-condensed table-bordered table-hover">
 							<thead>
 								<tr>
-									<th class="text-center">#</th>
-									<th class="">Product</th>
-									<th class="">Ordered UserName</th>
-									<th class="">Amount</th>
-									<th class="">Status</th>
-									<th class="">Delivery Address</th>
+									<th class="p-3 mb-2 bg-primary text-white" scope="col">#</th>
+									<th class="p-3 mb-2 bg-primary text-white" scope="col">Product</th>
+									<th class="p-3 mb-2 bg-primary text-white" scope="col">Ordered UserName</th>
+									<th class="p-3 mb-2 bg-primary text-white" scope="col">Amount</th>
+									<th class="p-3 mb-2 bg-primary text-white" scope="col ">Status</th>
+									<th class="p-3 mb-2 bg-primary text-white" scope="col">Delivery Address</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -51,7 +53,7 @@
 										 <p> <b><?php echo number_format($row['bid_amount'],2) ?></b></p>
 									</td>
 									
-									<td class="text-center">
+									<td class="p-3 mb-2 bg-info text-white">
 										<?php if($row['status'] == 1): ?>
 										<?php if(strtotime(date('Y-m-d H:i')) < strtotime($row['bdt'])): ?>
 										<span class="badge badge-secondary">Bidding Stage</span>

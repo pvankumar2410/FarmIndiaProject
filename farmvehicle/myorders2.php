@@ -4,6 +4,7 @@
 	<head>
 		<!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
 </head>
 <body>
 <div class="container-fluid">
@@ -86,7 +87,7 @@
 										<?php endif; ?>
 									</td>
 									<td class="">
-									<button	class="btn btn-outline-primary" type="button" id="add_to_cart">Cancel</button>
+									<button	class="btn btn-outline-primary" type="button" id="cal">Cancel</button>
 									</td>
                                     
 									
@@ -124,11 +125,8 @@
 	}*/
 </style>
 <script>
-	$('#add_to_cart').click(function(){
-    if('<?php echo !isset($_SESSION['login_id']) ?>' == 1){
-            uni_modal("Please Login First",'login.php')
-            return false
-    }
+	$('#cal').click(function(){
+   
     start_load()
 
     $.ajax({
