@@ -28,7 +28,7 @@
 									<th scope="col">Quantity</th>
 									<th scope="col">Total Amount</th>
 									<th scope="col">Status</th>
-									<th scope="col">Cancellation      Status</th>
+									<th scope="col">Cancellation Status</th>
                                     <th scope="col">Action</th>
 								</tr>
 							</thead>
@@ -86,7 +86,7 @@
 										<?php endif; ?>
 									</td>
 									<td class="">
-										<a href="cancel.html"> Cancel Order </a>
+									<button	class="btn btn-outline-primary" type="button" id="add_to_cart">Cancel</button>
 									</td>
                                     
 									
@@ -124,67 +124,26 @@
 	}*/
 </style>
 <script>
-	$('#new_order').click(function(){
-		uni_modal("New order","manage_order.php","large")
-	})
-	$('.edit_order').click(function(){
-		uni_modal("Manage order Data","manage_order.php?id="+$(this).attr('data-id'),"large")
-	})
-	$('#manage-order').on('reset',function(){
-		$('input:hidden').val('')
-		$('.select2').val('').trigger('change')
-	})
-	
-	$('#manage-order').submit(function(e){
-		e.preventDefault()
-		start_load()
-		$.ajax({
-			url:'ajax.php?action=save_order',
-			data: new FormData($(this)[0]),
-		    cache: false,
-		    contentType: false,
-		    processData: false,
-		    method: 'POST',
-		    type: 'POST',
-			success:function(resp){
-				if(resp==1){
-					alert_toast("Data successfully added",'success')
-					setTimeout(function(){
-						location.reload()
-					},1500)
+	$('#add_to_cart').click(function(){
+    if('<?php echo !isset($_SESSION['login_id']) ?>' == 1){
+            uni_modal("Please Login First",'login.php')
+            return false
+    }
+    start_load()
 
-				}
-				else if(resp==2){
-					alert_toast("Data successfully updated",'success')
-					setTimeout(function(){
-						location.reload()
-					},1500)
-
-				}
-			}
-		})
-	})
-	$('.delete_order').click(function(){
-		_conf("Are you sure to delete this order?","delete_order",[$(this).attr('data-id')])
-	})
-	function delete_order($id){
-		start_load()
-		$.ajax({
-			url:'ajax.php?action=delete_order',
-			method:'POST',
-			data:{id:$id},
-			success:function(resp){
-				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
-					setTimeout(function(){
-						location.reload()
-					},1500)
-
-				}
-			}
-		})
-	}
-	$('table').dataTable()
+    $.ajax({
+        url:'admin/ajax.php?action=cancelorder',
+        method:'POST',
+        data:{order_id: '<?php echo $id ?>',reason: '<?php echo $reason ?>'},
+        success:function(resp){
+            if(resp == 1){
+                alert_toast("Equipment successfully added to cart.","success")
+                end_load()
+                load_cart()
+            }
+        }
+    })
+})	
 </script>
 </body>
 </html>

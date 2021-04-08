@@ -86,6 +86,22 @@ Class Action {
 		if($delete)
 			return 1;
 	}
+function cancelorder(){
+	extract($_POST);
+		$data = " customer_id = {$_SESSION['login_id']} ";
+		$data .= ", order_id= $id";
+		$data .= ", reason= $reason";
+		$check = $this->db->query("SELECT * FROM orders where order_id = $order_id and customer_id ={$_SESSION['login_id']} ");
+		$id= $check->num_rows > 0 ? $check->fetch_array()['id'] : '';
+		if(!empty($id))
+		$save = $this->db->query("INSERT INTO orders set ".$data);
+		else
+		$save = $this->db->query("UPDATE orders set ".$data." where id = ".$id);
+		if($save){
+			return 1;
+		}
+}
+
 	function signup(){
 		extract($_POST);
 		$data = " name = '$name' ";

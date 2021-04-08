@@ -38,6 +38,11 @@ if($action == 'delete_user'){
 	if($save)
 		echo $save;
 }
+if($action == 'cancelorder'){
+	$save = $crud->cancelorder();
+	if($save)
+		echo $save;
+}
 if($action == 'signup'){
 	$save = $crud->signup();
 	if($save)
