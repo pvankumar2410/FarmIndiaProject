@@ -44,7 +44,7 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../farmIndiahome/index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.php">Home</a></li>
                         <?php if(isset($_SESSION['login_id'])): ?>
 
 
@@ -67,7 +67,7 @@
                           </li>
                       <?php endif; ?>
                       <li class="nav-item"><a class="nav-link js-scroll-trigger" href="myorders2.php"> <i class="bi bi-bag-check-fill"></i>My Orders</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../farmindiahome/#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../#about">About</a></li>
                         <?php if(isset($_SESSION['login_id'])): ?>
                        <div class=" dropdown mr-4">
                             <a href="#" class="text-white dropdown-toggle"  id="account_settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['login_name'] ?> </a>

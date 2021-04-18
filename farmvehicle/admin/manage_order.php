@@ -7,6 +7,14 @@ if(isset($_GET['id'])){
 	}
 }
 ?>
+<?php
+if(isset($_GET['id'])){
+	$qry = $conn->query("SELECT * from orders where id = {$_GET['id']} ");
+	foreach($qry->fetch_array() as $k => $v){
+		$$k = $v;
+	}
+}
+?>
 <style type="text/css">
 	.img-field{
 		width: calc(25%);
@@ -96,7 +104,11 @@ if(isset($_GET['id'])){
 							<option value="1" <?php echo $cancel == 1 ? 'selected' : '' ?>>Approved</option>
 						</select>
 					</div>
-					<p>Expected Delivery Date: <b><?php echo number_format($total,2) ?></b></p>
+					<div class="form-group">
+			<label for="" class="control-label">Delivery Date</label>
+			<input type="date" name="delivery" class="form-control" value="<?php echo isset($delivery) ? $delivery : '' ?>">
+			
+		</div>
 				</div>
 			</div>
 		</div>

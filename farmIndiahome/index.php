@@ -1,7 +1,7 @@
-<?php include '../mail.php'; ?>
+<?php include 'mail.php'; ?>
 <?php
 session_start();
- include '../bidding/admin/db_connect.php' 
+ include 'bidding/admin/db_connect.php' 
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,7 @@ session_start();
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#serv">Services </a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
                         <?php if(isset($_SESSION['login_id'])): ?>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../bidding/admin/ajax.php?action=logout2"><?php echo "Welcome ".$_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="bidding/admin/ajax.php?action=logout2"><?php echo "Welcome ".$_SESSION['login_name'] ?> <i class="fa fa-power-off"></i></a></li>
                       <?php else: ?>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="javascript:void(0)" id="Login">Not Logged In</a></li>
                       <?php endif; ?>
@@ -103,7 +103,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             <li>Safe and Secure
             </li>
             <br>
-            <a class="btn btn-outline-primary" href="../bidding/index.php">Visit Page</a>
+            <a class="btn btn-outline-primary" href="bidding/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
@@ -124,7 +124,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <br>
             
-            <a class="btn btn-outline-primary" href="../FarmJobs/index.php">Visit Page</a>
+            <a class="btn btn-outline-primary" href="FarmJobs/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
@@ -145,7 +145,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
             </li>
             <br>
             
-            <a class="btn btn-outline-primary" href="../farmvehicle/index.php">Visit Page</a>
+            <a class="btn btn-outline-primary" href="farmvehicle/index.php">Visit Page</a>
           </ul>
         </div>
       </div>
@@ -224,7 +224,7 @@ FarmIndia is a community-based Web Application that focuses on solving unnoticed
                          include('weather.php');
                         ?>
 
-         <a class="btn btn-primary js-scroll-trigger" href="../weather/index.html">Check Other Places ?</a>
+         <a class="btn btn-primary js-scroll-trigger" href="weather/index.html">Check Other Places ?</a>
 
 
                                   </div>
